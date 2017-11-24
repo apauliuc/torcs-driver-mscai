@@ -40,7 +40,7 @@ class MyDriver(Driver):
     def __init__(self, logdata=True):
         super().__init__(logdata)
 
-        self.neural_net = RNN(22, 100, 2, 3)
+        self.neural_net = RNN(22, 160, 3, 3)
         self.neural_net.load_state_dict(torch.load('rnn_params.pt'))
 
     def drive(self, carstate: State) -> Command:
@@ -72,7 +72,7 @@ class MyDriver(Driver):
         else:
             command.accelerator = 0
 
-        if carstate.rpm < 3000:
+        if carstate.rpm < 3000 and carstate.gear != 0:
             command.gear = carstate.gear - 1
         
         if not command.gear:
@@ -81,5 +81,7 @@ class MyDriver(Driver):
         command.brake = min(max(0, brake), 1)
 
         command.steering = min(max(-1, steer), 1)
+
+        #print('acc: %.4f, brake: %.4f, steer: %.4f' %(command.accelerator, command.brake, command.steering))
         
         return command
