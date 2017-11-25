@@ -9,6 +9,12 @@ __pycache__/
 # pyenv
 .python-version
 
+# torcs server
+torcs-1.3.7-patched
+
+# dunno what this is
+.directory
+
 ### macOS ###
 *.DS_Store
 .AppleDouble
