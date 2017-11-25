@@ -2,6 +2,7 @@ from pytocl.driver import Driver
 from pytocl.car import State, Command
 
 import numpy as np
+import pickle
 import torch
 import torch.nn as nn
 from torch.autograd import Variable
@@ -40,48 +41,52 @@ class MyDriver(Driver):
     def __init__(self, logdata=True):
         super().__init__(logdata)
 
-        self.neural_net = RNN(22, 160, 3, 3)
+        self.neural_net = RNN(28, 28, 3, 3)
         self.neural_net.load_state_dict(torch.load('rnn_params.pt'))
+        with open('norm_parameters.pickle', 'rb') as handle:
+            self.params_dict = pickle.load(handle)
+
+    def normalize(x, min, max):
+        return (x - min)/(max-min)
+
+    def invert_normalize(x, min, max):
+        return x * (max - min) + min
 
     def drive(self, carstate: State) -> Command:
+        wheelSpin = [self.normalize(i, 0, self.params_dict['maxWheelSpin'] for i in list(carstate.wheel_velocities))]
+        distFromEdge = [self.normalize(i, 0, 200) for i in list(carstate.distances_from_edge)]
         X = np.array([
-            carstate.speed_x,
-            carstate.distance_from_center,
-            carstate.angle        
-        ] + list(carstate.distances_from_edge))
+            self.normalize(carstate.speed_x, self.params_dict['minSpeedX'], self.params_dict['maxSpeedX']),
+            self.normalize(carstate.speed_y, self.params_dict['minSpeedY'], self.params_dict['maxSpeedY']),
+            self.normalize(carstate.angle, -180, 180),
+            self.normalize(carstate.gear, -1, 6),
+            self.normalize(carstate.rpm, 0, self.params_dict['maxRPM'])
+        ] + wheelSpin + distFromEdge
 
         X = torch.from_numpy(X).float()
         params = Variable(X.view(-1, 1, 22))
         output = self.neural_net(params)
 
-        results = output.resize(3).data.numpy()
-        acc = results[0]
-        brake = results[1]
-        steer = results[2]
+        results = output.resize(3).data.numpy()        
+        gear = results[0]
+        steer = results[1]
+        accel_brake = results[2]
 
         command = Command()
         
-        if acc > 0:
-            if abs(carstate.distance_from_center) >= 1:
-                acc = min(0.4, acc)
-            
-            command.accelerator = min(acc, 1)
-
-            if carstate.rpm > 8000:
-                command.gear = carstate.gear + 1
+        accel_brake = max(min(0, accel_brake), 1)
+        if accel_brake >= 0.5:
+            command.brake = 0
+            command.accelerator = self.normalize(accel_brake, 0.5, 1)
         else:
+            command.brake = self.normalize(accel_brake, 0, 0.5)
             command.accelerator = 0
 
-        if carstate.rpm < 3000 and carstate.gear != 0:
-            command.gear = carstate.gear - 1
-        
-        if not command.gear:
-            command.gear = carstate.gear or 1
+        gear = max(min(0, gear), 1)
+        gear = self.invert_normalize(gear, -1, 6)
+        command.gear = int(round(gear))
 
-        command.brake = min(max(0, brake), 1)
-
-        command.steering = min(max(-1, steer), 1)
-
-        #print('acc: %.4f, brake: %.4f, steer: %.4f' %(command.accelerator, command.brake, command.steering))
+        steer = max(min(0, steer), 1)
+        steer = self.invert_normalize(steer, -1, 1)
         
         return command
