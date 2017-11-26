@@ -1,6 +1,7 @@
 import sys
 import xml.etree.ElementTree as ET
 
+
 def main():
     tracks = [
         {},
@@ -12,7 +13,7 @@ def main():
         {'name': 'spring', 'category': 'road'},
         {'name': 'wheel-1', 'category': 'road'},
         {'name': 'aalborg', 'category': 'road'},
-        {'name': 'apline-1', 'category': 'road'},
+        {'name': 'alpine-1', 'category': 'road'},
         {'name': 'e-track-2', 'category': 'road'},
         {'name': 'dirt-1', 'category': 'dirt'},
         {'name': 'dirt-2', 'category': 'dirt'},
@@ -26,11 +27,11 @@ def main():
         {'name': 'b-speedway', 'category': 'oval'},
 
     ]
-    track = tracks[int(sys.argv[1])]
 
-    xml = ET.parse('quickrace.xml')
+    track = tracks[int(sys.argv[1])]
+    xml = ET.parse('./simulator/quickrace.xml')
     root = xml.getroot()
-    print('Changing track to category={} name={}'.format(track['category'], track['name']))
+    print('current track: {}-{}'.format(track['category'], track['name']))
     for node in root.findall('section'):
         if node.attrib['name'] == 'Tracks':
             for attstr in node.find('section'):
@@ -39,6 +40,7 @@ def main():
                 elif attstr.attrib['name'] == 'category':
                     attstr.set('val', track['category'])
             break
+    return xml.write('./simulator/quickrace.xml', encoding='UTF-8')
 
 
 if __name__ == '__main__':
