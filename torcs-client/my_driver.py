@@ -41,17 +41,17 @@ class MyDriver(Driver):
     def __init__(self, logdata=True):
         super().__init__(logdata)
 
-        self.neural_net = RNN_LSTM(28, 28, 3, 3)
-        self.neural_net.load_state_dict(torch.load('rnn_params.pt'))
+        self.neural_net = RNN_LSTM(28, 56, 2, 3)
+        self.neural_net.load_state_dict(torch.load('params.pt'))
         with open('norm_parameters.pickle', 'rb') as handle:
             self.params_dict = pickle.load(handle)
 
     def normalize(self, x, mmin, mmax):
         norm = (x - mmin)/(mmax-mmin)
-        return max(min(0, norm), 1)
+        return min(max(0, norm), 1)
 
     def invert_normalize(self, x, mmin, mmax):
-        x = max(min(0, x), 1)
+        x = min(max(0, x), 1)
         return x * (mmax - mmin) + mmin
 
     def drive(self, carstate: State) -> Command:
@@ -78,7 +78,7 @@ class MyDriver(Driver):
 
         command = Command()
 
-        accel_brake = max(min(0, accel_brake), 1)
+        accel_brake = min(max(0, accel_brake), 1)
         if accel_brake >= 0.5:
             command.brake = 0
             command.accelerator = self.normalize(accel_brake, 0.5, 1)
@@ -86,11 +86,11 @@ class MyDriver(Driver):
             command.brake = self.normalize(accel_brake, 0, 0.5)
             command.accelerator = 0
 
-        gear = max(min(0, gear), 1)
+        gear = min(max(0, gear), 1)
         gear = self.invert_normalize(gear, -1, 6)
         command.gear = int(round(gear))
 
-        steer = max(min(0, steer), 1)
+        steer = min(max(0, steer), 1)
         command.steering = self.invert_normalize(steer, -1, 1)
 
         return command
