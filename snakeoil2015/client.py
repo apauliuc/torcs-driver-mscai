@@ -719,6 +719,10 @@ def initialize_car(c):
 
 
 if __name__ == "__main__":
+    # allow for simulations
+    if os.getcwd() == '/home/andrei/Code/torcs-driver-mscai':
+        os.chdir('snakeoil2015')
+
     T = Track()
     C = snakeoil.Client()
     if C.stage == 1 or C.stage == 2:

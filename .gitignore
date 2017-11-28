@@ -12,7 +12,12 @@ __pycache__/
 # torcs server
 torcs-1.3.7-patched
 
+# Jetbrains
+.idea
+
 # dunno what this is
+
+.idea
 .directory
 .idea/
 echo-state-net/.idea/
