@@ -115,9 +115,10 @@ class ESN:
         if self.print_state:
             print("training error:")
         pred_train = self.activation_out(M.dot(self.W_out.T))
+        pred_err = np.sqrt(np.mean((pred_train - outputs) ** 2))
         if self.print_state:
-            print(np.sqrt(np.mean((pred_train - outputs) ** 2)))
-        return pred_train
+            print(pred_err)
+        return pred_train, pred_err
 
     def predict(self, inputs, continuation_train=False):
         """

@@ -1,62 +1,71 @@
 from pytocl.driver import Driver
 from pytocl.car import State, Command
+from finalESN import ESN
 
 import numpy as np
 import pickle
-import torch
-import torch.nn as nn
-from torch.autograd import Variable
-import torch.utils.data
+import pandas as pd
 
-class RNN_LSTM(nn.Module):
-    def __init__(self, input_size, hidden_size, num_layers, output_size):
-        self.num_layers = num_layers
-        self.hidden_size = hidden_size
+def load_obj(name):
+    with open('parameters/' + name + '.pkl', 'rb') as f:
+        return pickle.load(f)
 
-        super(RNN_LSTM, self).__init__()
-        self.lstm = nn.LSTM(
-            input_size=input_size,
-            hidden_size=hidden_size,
-            num_layers=num_layers,
-            batch_first=False
-        )
-        self.out = nn.Linear(hidden_size, output_size)
-        self.hidden = self.init_hidden()
+def safe_arctanh(x):
+    if x.ndim == 2:
+        for row in np.arange(x.shape[0]):
+            x[row, :] = [i - 1e-15 if i == 1 else i + 1e-15 if i == -1 else i for i in x[row, :]]
+    elif x.ndim == 1:
+        x = [i - 1e-15 if i == 1 else i + 1e-15 if i == -1 else i for i in x]
+    return np.arctanh(x)
 
-    def init_hidden(self, x=None):
-        if x == None:
-            return (Variable(torch.zeros(self.num_layers, 1, self.hidden_size)),
-                    Variable(torch.zeros(self.num_layers, 1, self.hidden_size)))
-        else:
-            return (Variable(x[0].data),Variable(x[1].data))
 
-    def forward(self, x):
-        lstm_out, self.hidden_out = self.lstm(x, self.hidden)
-        output = self.out(lstm_out.view(len(x), -1))
-        self.hidden = self.init_hidden(self.hidden_out)
-        return output
-
+# noinspection PyPep8Naming
 class MyDriver(Driver):
 
     def __init__(self, logdata=True):
         super().__init__(logdata)
 
-        self.neural_net = RNN_LSTM(28, 56, 2, 3)
-        self.neural_net.load_state_dict(torch.load('params.pt'))
-        with open('norm_parameters.pickle', 'rb') as handle:
-            self.params_dict = pickle.load(handle)
+        self.esn = ESN(
+            n_inputs=28,
+            n_outputs=3,
+            n_reservoir=200,
+            spectral_radius=0.85,
+            sparsity=0,
+            noise=0.001,
+            teacher_forcing=True,
+            activation_out=np.tanh,
+            inverse_activation_out=safe_arctanh,
+            print_state=False
+        )
+
+        self.esn.random_state_ = load_obj('esn_random_state')
+        last_data = load_obj('esn_last_data')
+        weights = load_obj('esn_weights')
+
+        self.esn.last_input = last_data['last_input']
+        self.esn.last_state = last_data['last_state']
+        self.esn.last_output = last_data['last_output']
+        self.esn.W = weights['W']
+        self.esn.W_in = weights['W_in']
+        self.esn.W_feedback = weights['W_feedback']
+        self.esn.W_out = weights['W_out']
+
+        self.params_dict = load_obj('norm_parameters')
+
+        self.first_step = False
 
     def normalize(self, x, mmin, mmax):
         norm = (x - mmin)/(mmax-mmin)
-        return min(max(0, norm), 1)
+        return min(max(-1, norm), 1)
 
     def invert_normalize(self, x, mmin, mmax):
-        x = min(max(0, x), 1)
+        x = min(max(-1, x), 1)
         return x * (mmax - mmin) + mmin
 
+    def normalize_to_int(self, x, mmin, mmax, a=-1, b=1):
+        return (b - a) * (x - mmin) / (mmax - mmin) + a
+
     def drive(self, carstate: State) -> Command:
-        wheelSpin = [self.normalize(i, 0, self.params_dict['maxWheelSpin']) for i in list(carstate.wheel_velocities)]
-        distFromEdge = [self.normalize(i, 0, 200) for i in list(carstate.distances_from_edge)]
         X = np.array([
             self.normalize(carstate.speed_x, self.params_dict['minSpeedX'], self.params_dict['maxSpeedX']),
             self.normalize(carstate.speed_y, self.params_dict['minSpeedY'], self.params_dict['maxSpeedY']),
@@ -64,33 +73,47 @@ class MyDriver(Driver):
             self.normalize(carstate.gear, -1, 6),
             self.normalize(carstate.rpm, 0, self.params_dict['maxRPM'])
         ])
+        wheelSpin = [self.normalize(i, 0, self.params_dict['maxWheelSpin']) for i in list(carstate.wheel_velocities)]
+        distFromEdge = [self.normalize(i, 0, 200) for i in list(carstate.distances_from_edge)]
 
         X = np.concatenate((X, wheelSpin, distFromEdge))
 
-        X = torch.from_numpy(X).float()
-        params = Variable(X.view(-1, 1, 28))
-        output = self.neural_net(params)
+        results = self.esn.predict(X, self.first_step).reshape(3)
 
-        results = output.resize(3).data.numpy()
-        gear = results[0]
-        steer = results[1]
-        accel_brake = results[2]
+        steer = results[0]
+        accelerate = results[1]
+        brake = results[2]
+
+        print(accelerate)
+        print(brake)
 
         command = Command()
 
-        accel_brake = min(max(0, accel_brake), 1)
-        if accel_brake >= 0.5:
-            command.brake = 0
-            command.accelerator = self.normalize(accel_brake, 0.5, 1)
-        else:
-            command.brake = self.normalize(accel_brake, 0, 0.5)
-            command.accelerator = 0
+        accelerate = self.normalize_to_int(accelerate, -1, 1, 0 ,1)
 
-        gear = min(max(0, gear), 1)
-        gear = self.invert_normalize(gear, -1, 6)
-        command.gear = int(round(gear))
+        if accelerate > 0:
+            command.accelerator = accelerate
 
-        steer = min(max(0, steer), 1)
-        command.steering = self.invert_normalize(steer, -1, 1)
+            if carstate.rpm > 8000:
+                command.gear = carstate.gear + 1
+        elif carstate.rpm < 2500:
+                command.gear = carstate.gear - 1
+
+        command.brake = self.normalize_to_int(brake, -1, 1, 0, 1)
+
+        if not command.gear:
+            command.gear = carstate.gear or 1
+
+        # if command.accelerator > 0:
+        #     if carstate.rpm > 8000:
+        #         command.gear = carstate.gear + 1
+        # else:
+        #     if carstate.rpm < 2500:
+        #         command.gear = carstate.gear - 1
+
+        steer = min(max(-1, steer), 1)
+        command.steering = steer
+
+        self.first_step = True
 
         return command
