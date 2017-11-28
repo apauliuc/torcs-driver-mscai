@@ -745,6 +745,11 @@ if __name__ == "__main__":
 
         drive(C, step)
 
+
+
+        # send command to server
+        C.respond_to_server()
+
         # State: [speedX, speedY, angle, currentGear, RPM, *wheelSpin, *sensorValues]
         # Response: [gear, steering, accelerate, brake]
         # only add data if passed the warm-up stage
@@ -775,8 +780,6 @@ if __name__ == "__main__":
             writer.writerow(row)
             f.flush()
 
-        # send command to server
-        C.respond_to_server()
     if not C.stage:
         T.write_track(C.trackname)
     C.R.d['meta'] = 1
