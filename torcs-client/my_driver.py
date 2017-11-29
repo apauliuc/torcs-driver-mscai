@@ -4,10 +4,9 @@ from finalESN import ESN
 
 import numpy as np
 import pickle
-import pandas as pd
 
 def load_obj(name):
-    with open('parameters/' + name + '.pkl', 'rb') as f:
+    with open('parameters/' + name + '_' + '1152' + '.pkl', 'rb') as f:
         return pickle.load(f)
 
 def safe_arctanh(x):
@@ -19,32 +18,29 @@ def safe_arctanh(x):
     return np.arctanh(x)
 
 
-# noinspection PyPep8Naming
+# noinspection PyPep8Naming,PyMethodMayBeStatic
 class MyDriver(Driver):
 
     def __init__(self, logdata=True):
         super().__init__(logdata)
 
+        net_p = load_obj('esn_parameters')
+
         self.esn = ESN(
-            n_inputs=28,
-            n_outputs=3,
-            n_reservoir=200,
-            spectral_radius=0.85,
-            sparsity=0,
-            noise=0.001,
-            teacher_forcing=True,
+            n_inputs=net_p['n_inputs'],
+            n_outputs=net_p['n_outputs'],
+            n_reservoir=net_p['n_reservoir'],
+            spectral_radius=net_p['spectral_radius'],
+            sparsity=net_p['sparsity'],
+            noise=net_p['noise'],
+            teacher_forcing=net_p['teacher_forcing'],
             activation_out=np.tanh,
             inverse_activation_out=safe_arctanh,
             print_state=False
         )
 
         self.esn.random_state_ = load_obj('esn_random_state')
-        last_data = load_obj('esn_last_data')
         weights = load_obj('esn_weights')
-
-        self.esn.last_input = last_data['last_input']
-        self.esn.last_state = last_data['last_state']
-        self.esn.last_output = last_data['last_output']
         self.esn.W = weights['W']
         self.esn.W_in = weights['W_in']
         self.esn.W_feedback = weights['W_feedback']
@@ -56,63 +52,71 @@ class MyDriver(Driver):
 
     def normalize(self, x, mmin, mmax):
         norm = (x - mmin)/(mmax-mmin)
-        return min(max(-1, norm), 1)
+        return np.clip(norm, -1, 1)
 
     def invert_normalize(self, x, mmin, mmax):
-        x = min(max(-1, x), 1)
+        x = np.clip(x, -1, 1)
         return x * (mmax - mmin) + mmin
 
     def normalize_to_int(self, x, mmin, mmax, a=-1, b=1):
         return (b - a) * (x - mmin) / (mmax - mmin) + a
 
     def drive(self, carstate: State) -> Command:
+        # X = np.array([
+        #     self.normalize(carstate.speed_x, self.params_dict['minSpeedX'], self.params_dict['maxSpeedX']),
+        #     self.normalize(carstate.speed_y, self.params_dict['minSpeedY'], self.params_dict['maxSpeedY']),
+        #     self.normalize(carstate.angle, -180, 180),
+        #     self.normalize(carstate.gear, -1, 6),
+        #     self.normalize(carstate.rpm, 0, self.params_dict['maxRPM'])
+        # ])
+        # wheelSpin = [self.normalize(i, 0, self.params_dict['maxWheelSpin']) for i in list(carstate.wheel_velocities)]
+        # distFromEdge = [self.normalize(i, 0, 200) for i in list(carstate.distances_from_edge)]
+
         X = np.array([
-            self.normalize(carstate.speed_x, self.params_dict['minSpeedX'], self.params_dict['maxSpeedX']),
-            self.normalize(carstate.speed_y, self.params_dict['minSpeedY'], self.params_dict['maxSpeedY']),
-            self.normalize(carstate.angle, -180, 180),
-            self.normalize(carstate.gear, -1, 6),
-            self.normalize(carstate.rpm, 0, self.params_dict['maxRPM'])
+            carstate.speed_x,
+            carstate.speed_y,
+            carstate.angle,
+            carstate.gear,
+            carstate.rpm
         ])
-        wheelSpin = [self.normalize(i, 0, self.params_dict['maxWheelSpin']) for i in list(carstate.wheel_velocities)]
-        distFromEdge = [self.normalize(i, 0, 200) for i in list(carstate.distances_from_edge)]
+        wheelSpin = [i for i in list(carstate.wheel_velocities)]
+        distFromEdge = [i for i in list(carstate.distances_from_edge)]
 
         X = np.concatenate((X, wheelSpin, distFromEdge))
 
         results = self.esn.predict(X, self.first_step).reshape(3)
 
-        steer = results[0]
-        accelerate = results[1]
-        brake = results[2]
-
-        print(accelerate)
-        print(brake)
+        # gear = results[0]
+        steer = results[1]
+        acc_brake = results[2]
 
         command = Command()
 
-        accelerate = self.normalize_to_int(accelerate, -1, 1, 0 ,1)
+        acc_brake = np.clip(acc_brake, -1, 1)
 
-        if accelerate > 0:
-            command.accelerator = accelerate
+        # gear = self.normalize_to_int(gear, -1, 1, -1, 6)
+        # gear = int(round(gear))
+
+        # print('{} {}'.format(gear, steer))
+
+        if acc_brake > 0:
+            command.brake = 0
+            command.accelerator = acc_brake
 
             if carstate.rpm > 8000:
                 command.gear = carstate.gear + 1
-        elif carstate.rpm < 2500:
-                command.gear = carstate.gear - 1
+        else:
+            command.brake = np.abs(acc_brake)
+            command.accelerator = 0
 
-        command.brake = self.normalize_to_int(brake, -1, 1, 0, 1)
+            if carstate.rpm < 2500:
+                command.gear = carstate.gear - 1
 
         if not command.gear:
             command.gear = carstate.gear or 1
 
-        # if command.accelerator > 0:
-        #     if carstate.rpm > 8000:
-        #         command.gear = carstate.gear + 1
-        # else:
-        #     if carstate.rpm < 2500:
-        #         command.gear = carstate.gear - 1
-
-        steer = min(max(-1, steer), 1)
-        command.steering = steer
+        print(steer)
+        command.steering = np.clip(steer, -1, 1)
 
         self.first_step = True
 

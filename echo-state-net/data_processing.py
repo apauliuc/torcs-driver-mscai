@@ -3,11 +3,14 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import Imputer
 
+
 def normalize(x, mmin, mmax):
     return (x - mmin) / (mmax - mmin)
 
+
 def normalize_to_int(x, mmin, mmax, a=-1, b=1):
     return (b - a) * (x - mmin) / (mmax - mmin) + a
+
 
 # noinspection PyPep8Naming
 def load_training_data(folder, normalization=True):
@@ -54,30 +57,31 @@ def load_training_data(folder, normalization=True):
         'minDistFromEdge': minDistFromEdge
     }
 
-    X_train = np.zeros(X_full.shape)
+    X_train = X_full
     y_train = np.zeros(y_full.shape)
 
     if normalization:
-        # speedX = range(search min, search max)
-        X_train[:, 0] = normalize_to_int(X_full[:, 0], minSpeedX, maxSpeedX)
-        # speedY = range(search min, search max)
-        X_train[:, 1] = normalize_to_int(X_full[:, 1], minSpeedY, maxSpeedY)
-        # angle = range(-180, 180)
-        X_train[:, 2] = normalize_to_int(X_full[:, 2], -180, 180)
-        # currentGear = range(-1, 6)
-        X_train[:, 3] = normalize_to_int(X_full[:, 3], -1, 6)
-        # RPM = range(0, search max)
-        X_train[:, 4] = normalize_to_int(X_full[:, 4], 0, maxRPM)
-        # *wheelSpin = range(0, search max)
-        for i in np.arange(5, 9):
-            X_train[:, i] = normalize_to_int(X_full[:, i], minWheelSpin, maxWheelSpin)
-        # *sensorValues = range(0, 200)
-        for i in np.arange(9, 28):
-            X_train[:, i] = normalize_to_int(X_full[:, i], minDistFromEdge, 200)
+        # # speedX = range(search min, search max)
+        # X_train[:, 0] = normalize_to_int(X_full[:, 0], minSpeedX, maxSpeedX)
+        # # speedY = range(search min, search max)
+        # X_train[:, 1] = normalize_to_int(X_full[:, 1], minSpeedY, maxSpeedY)
+        # # angle = range(-180, 180)
+        # X_train[:, 2] = normalize_to_int(X_full[:, 2], -180, 180)
+        # # currentGear = range(-1, 6)
+        # X_train[:, 3] = normalize_to_int(X_full[:, 3], -1, 6)
+        # # RPM = range(0, search max)
+        # X_train[:, 4] = normalize_to_int(X_full[:, 4], 0, maxRPM)
+        # # *wheelSpin = range(0, search max)
+        # for i in np.arange(5, 9):
+        #     X_train[:, i] = normalize_to_int(X_full[:, i], minWheelSpin, maxWheelSpin)
+        # # *sensorValues = range(0, 200)
+        # for i in np.arange(9, 28):
+        #     X_train[:, i] = normalize_to_int(X_full[:, i], minDistFromEdge, 200)
+        #
         # gear = range(-1, 6)
         y_train[:, 0] = normalize_to_int(y_full[:, 0], -1, 6)
         # steering = range(-1, 1)
-        y_train[:, 1] = normalize_to_int(y_full[:, 1], y_full[:, 1].min(), y_full[:, 1].max())
+        y_train[:, 1] = normalize_to_int(y_full[:, 1], -1, 1)
         # y_train[:,1] = normalize2(y_full[:,1], -1, 1)  # steering = range(-1, 1)
         # accelerate-brake = range(-1, 1)
         # for acceleration and break, compute their difference and normalize it
@@ -85,7 +89,6 @@ def load_training_data(folder, normalization=True):
         y_train[:, 2] = normalize_to_int(accel_brake, accel_brake.min(), accel_brake.max())
         # y_train[:,2] = normalize_to_int(accel_brake, -1, 1)
     else:
-        X_train = X_full
         y_train = y_full
 
     y_train = np.delete(y_train, 3, axis=1)

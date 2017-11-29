@@ -44,7 +44,7 @@ class ESN:
         # random matrix centered around zero
         W = self.random_state_.rand(self.n_reservoir, self.n_reservoir) - 0.5
         # delete fraction of connections given by self.sparsity
-        W[self.random_state_.rand(*W.shape) < self.sparsity] = 0
+        W[self.random_state_.rand(*W.shape) > self.sparsity] = 0
         # compute spectral radius of weights
         radius = np.max(np.abs(np.linalg.eigvals(W)))
         # rescale W
@@ -132,11 +132,11 @@ class ESN:
             array of output activations
         """
         if inputs.ndim < 2:
-            inputs = np.reshape(inputs, (len(inputs), -1))
+            inputs = np.reshape(inputs, (1, -1))
         n_samples = inputs.shape[0]
 
+        last_input = self.last_input if continuation_train else np.zeros(self.n_inputs).reshape(1, -1)
         last_state = self.last_state if continuation_train else np.zeros(self.n_reservoir)
-        last_input = self.last_input if continuation_train else np.zeros(self.n_inputs)
         last_output = self.last_output if continuation_train else np.zeros(self.n_outputs)
 
         inputs = np.vstack([last_input, inputs])
@@ -144,9 +144,13 @@ class ESN:
         outputs = np.vstack([last_output, np.zeros((n_samples, self.n_outputs))])
 
         for i in range(n_samples):
-            states[i + 1, :] = self._update(states[i, :], inputs[i + 1, :], outputs[i, :])
-            outputs[i + 1, :] = self.activation_out(
-                self.W_out.dot(np.concatenate([states[i + 1, :], inputs[i + 1, :]]))
+            states[i+1, :] = self._update(states[i, :], inputs[i+1, :], outputs[i, :])
+            outputs[i+1, :] = self.activation_out(
+                self.W_out.dot(np.concatenate([states[i+1, :], inputs[i+1, :]]))
             )
 
-        return self.activation_out(outputs[1:])
+        self.last_input = inputs[-1, :]
+        self.last_state = states[-1, :]
+        self.last_output = outputs[-1, :]
+
+        return outputs[1:]

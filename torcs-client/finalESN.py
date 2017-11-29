@@ -44,7 +44,7 @@ class ESN:
         # random matrix centered around zero
         W = self.random_state_.rand(self.n_reservoir, self.n_reservoir) - 0.5
         # delete fraction of connections given by self.sparsity
-        W[self.random_state_.rand(*W.shape) < self.sparsity] = 0
+        W[self.random_state_.rand(*W.shape) > self.sparsity] = 0
         # compute spectral radius of weights
         radius = np.max(np.abs(np.linalg.eigvals(W)))
         # rescale W
