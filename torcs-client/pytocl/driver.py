@@ -6,6 +6,8 @@ from pytocl.analysis import DataLogWriter
 from pytocl.car import State, Command, MPS_PER_KMH
 from pytocl.controller import CompositeController, ProportionalController, \
     IntegrationController, DerivativeController
+import csv
+import numpy as np
 
 _logger = logging.getLogger(__name__)
 
@@ -21,6 +23,9 @@ class Driver:
     """
 
     def __init__(self, logdata=True):
+        self.f = open('bot_data.csv', 'a', encoding='UTF-8')
+        self.writer = csv.writer(self.f)
+
         self.steering_ctrl = CompositeController(
             ProportionalController(0.4),
             IntegrationController(0.2, integral_limit=1.5),
@@ -40,7 +45,7 @@ class Driver:
         distances in these directions is returned in ``state.State.tracks``.
         """
         return -45, -19, -12, -7, -4, -2.5, -1.7, -1, -.5, 0, .5, 1, 1.7, 2.5, \
-            4, 7, 12, 19, 45
+               4, 7, 12, 19, 45
 
     def on_shutdown(self):
         """
@@ -52,6 +57,7 @@ class Driver:
         if self.data_logger:
             self.data_logger.close()
             self.data_logger = None
+        self.f.close()
 
     def drive(self, carstate: State) -> Command:
         """
@@ -72,6 +78,27 @@ class Driver:
 
         if self.data_logger:
             self.data_logger.log(carstate, command)
+
+        # State: [speedX, speedY, angle, currentGear, RPM, *wheelSpin, *sensorValues]
+        # Response: [gear, steering, accelerate, brake]
+        # only add data if passed the warm-up stage
+        data = np.array([
+            carstate.speed_x,
+            carstate.speed_y,
+            carstate.angle,
+            carstate.gear,
+            carstate.rpm,
+            *carstate.wheel_velocities,
+            *carstate.distances_from_edge,
+            command.gear,
+            command.steering,
+            command.accelerator,
+            command.brake,
+        ])
+
+        # write to file
+        self.writer.writerow(data)
+        self.f.flush()
 
         return command
 

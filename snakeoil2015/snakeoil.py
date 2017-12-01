@@ -538,7 +538,7 @@ def drive_example(c):
     '''This is only an example. It will get around the track but the
     correct thing to do is write your own `drive()` function.'''
     S, R = c.S.d, c.R.d
-    target_speed = 100
+    target_speed = 100zz
 
     # Steer To Corner
     R['steer'] = S['angle'] * 10 / PI
