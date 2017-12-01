@@ -23,7 +23,7 @@ class Driver:
     """
 
     def __init__(self, logdata=True):
-        self.f = open('bot_data.csv', 'a', encoding='UTF-8')
+        self.f = open('data.csv', 'a', encoding='UTF-8')
         self.writer = csv.writer(self.f)
 
         self.steering_ctrl = CompositeController(
