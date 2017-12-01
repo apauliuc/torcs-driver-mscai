@@ -1,155 +1,123 @@
 import numpy as np
+from sklearn.utils import check_random_state
 
 
-# noinspection PyAttributeOutsideInit,PyPep8Naming
-class ESN:
-    """Simple Echo State Network implementation"""
-    def __init__(self, n_inputs, n_outputs, n_reservoir=50, spectral_radius=0.95,
-                 sparsity=0, noise=0.001, teacher_forcing=True,
-                 activation_out=lambda x: x, inverse_activation_out=lambda x: x,
-                 random_state=None, print_state=True):
-        # save parameters
-        self.n_inputs = n_inputs
+# noinspection PyPep8Naming,PyAttributeOutsideInit
+class ESN(object):
+    def __init__(self, n_input, n_output, n_reservoir=50,
+                 spectral_radius=1.0, leaking_rate=0.1,
+                 reservoir_density=0.8, random_state=None,
+                 out_activation=lambda x: x, inverse_out_activation=lambda x: x,
+                 feedback=True, silent=True):
+        self.n_input = n_input
         self.n_reservoir = n_reservoir
-        self.n_outputs = n_outputs
-        self.spectral_radius = spectral_radius
-        self.sparsity = sparsity
-        self.noise = noise
+        self.n_output = n_output
 
-        self.activation_out = activation_out
-        self.inverse_activation_out = inverse_activation_out
-        self.random_state = random_state
+        self._spectral_radius = spectral_radius
+        self._reservoir_density = reservoir_density
+        self._leaking_rate = leaking_rate
+        self._feedback = feedback
+        self._silent = silent
 
-        # random_state might be seed, RandomState object or None
-        if isinstance(random_state, np.random.RandomState):
-            self.random_state_ = random_state
-        elif random_state:
-            try:
-                self.random_state_ = np.random.RandomState(random_state)
-            except TypeError as e:
-                raise Exception("Invalid seed: " + str(e))
-        else:
-            self.random_state_ = np.random.RandomState()
+        self.out_activation = out_activation
+        self.inverse_out_activation = inverse_out_activation
 
-        self.teacher_forcing = teacher_forcing
-        self.print_state = print_state
+        self.random_state_ = check_random_state(random_state)
 
-        # initialise recurrent weights
-        self.init_weights()
+        self._create_reservoir()
 
-    def init_weights(self):
-        """
-        Initialise random weights
-        """
-        # random matrix centered around zero
-        W = self.random_state_.rand(self.n_reservoir, self.n_reservoir) - 0.5
-        # delete fraction of connections given by self.sparsity
-        W[self.random_state_.rand(*W.shape) > self.sparsity] = 0
-        # compute spectral radius of weights
-        radius = np.max(np.abs(np.linalg.eigvals(W)))
-        # rescale W
-        self.W = W * (self.spectral_radius / radius)
+    def _create_reservoir(self):
+        # matrix with values [-0.5, 0.5]
+        self.W = self.random_state_.rand(self.n_reservoir, self.n_reservoir) - 0.5
 
-        # initialize input and feedback weights
-        self.W_in = self.random_state_.rand(self.n_reservoir, self.n_inputs) * 2 - 1
-        self.W_feedback = self.random_state_.rand(self.n_reservoir, self.n_outputs) * 2 - 1
+        # make weight matrix sparse
+        if self._reservoir_density is not None:
+            mask = self.random_state_.rand(*self.W.shape) > self._reservoir_density
+            self.W[mask] *= 0.0
+
+        # rescale weight matrix
+        if self._spectral_radius is not None:
+            radius = np.max(np.abs(np.linalg.eigvals(self.W)))
+            self.W = self.W * (self._spectral_radius / radius)
+
+        # input weight matrix
+        self.WInput = self.random_state_.rand(self.n_reservoir, 1 + self.n_input) - 0.5
+
+        # feedback weight matrix
+        self.WFeedback = self.random_state_.rand(self.n_reservoir, 1 + self.n_output) - 0.5
 
     def _update(self, state, in_data, out_data):
-        if self.teacher_forcing:
-            preactiv = (self.W.dot(state) +
-                        self.W_in.dot(in_data) +
-                        self.W_feedback.dot(out_data))
+        if self._feedback:
+            preactiv = (np.dot(self.W, state) +
+                        np.dot(self.WInput, in_data) +
+                        np.dot(self.WFeedback, self.inverse_out_activation(out_data)))
         else:
-            preactiv = (self.W.dot(state) +
-                        self.W_in.dot(in_data))
+            preactiv = (np.dot(self.W, state) +
+                        np.dot(self.WInput, in_data))
 
-        return (self.activation_out(preactiv) +
-                self.noise * (self.random_state_.rand(1, self.n_reservoir) - 0.5))
+        return (1 - self._leaking_rate) * state + self._leaking_rate * self.out_activation(preactiv)
 
-    def fit(self, inputs, outputs, inspect=False):
-        """
-        Train the echos state network based on input and output data
+    def fit(self, X, y):
+        if X.ndim < 2:
+            X = np.reshape(X, (len(X), -1))
+        if y.ndim < 2:
+            y = np.reshape(y, (len(y), -1))
 
-        Args:
-            inputs (array of dimension (N x n_inputs)): input data
-            outputs (array of dimension (N x n_outputs)): output data
-            inspect (bool): visualise data
-
-        Returns:
-            network output on training data, based on trained weights
-        """
-        if inputs.ndim < 2:
-            inputs = np.reshape(inputs, (len(inputs), -1))
-        if outputs.ndim < 2:
-            outputs = np.reshape(outputs, (len(outputs), -1))
-
-        # compute reservoir states
-        if self.print_state:
+        if not self._silent:
             print("computing states...")
-        states = np.zeros((inputs.shape[0], self.n_reservoir))
-        for i in range(1, inputs.shape[0]):
-            states[i, :] = self._update(states[i-1],
-                                        inputs[i, :],
-                                        outputs[i-1, :])
 
-        # fit the weights to states and output
-        if self.print_state:
+        washout_t = min(int(X.shape[0] / 10), 100)
+        self._feedback = False
+
+        states = np.zeros((X.shape[0], self.n_reservoir))
+        for i in np.arange(1, X.shape[0]):
+            if self._feedback is False and i > washout_t:
+                self._feedback = True
+
+            states[i, :] = self._update(states[i - 1, :],
+                                        np.hstack((1, X[i, :])),
+                                        np.hstack((1, y[i - 1, :])))
+
+        if not self._silent:
             print("fitting...")
-        # compute washout time T_0 and skip these data points
-        washout_time = min(int(inputs.shape[1] / 10), 100)
-        M = np.hstack((states, inputs))
-        M_inv = np.linalg.pinv(M[washout_time:, :])
-        self.W_out = M_inv.dot(self.inverse_activation_out(outputs[washout_time:, :])).T
 
-        self.last_input = inputs[-1, :]
-        self.last_state = states[-1, :]
-        self.last_output = outputs[-1, :]
+        M = np.hstack((states[washout_t:, :], X[washout_t:, :], y[washout_t - 1:-1, :]))
+        M_inv = np.linalg.pinv(M)
+        T_matrix = self.inverse_out_activation(y[washout_t:, :])
+        self.WOut = np.dot(M_inv, T_matrix).T
 
-        if inspect:
-            from matplotlib import pyplot as plt
-            plt.figure(figsize=(states.shape[0] * 0.0025, states.shape[1] * 0.01))
-            plt.imshow(M.T, aspect='auto', interpolation='nearest')
-            plt.colorbar()
-
-        # compute training error on computed weights
-        if self.print_state:
+        M = np.hstack((states, X, y))
+        pred_train = self.out_activation(np.dot(M, self.WOut.T))
+        pred_err = np.sqrt(np.mean((pred_train - y) ** 2))
+        if not self._silent:
             print("training error:")
-        pred_train = self.activation_out(M.dot(self.W_out.T))
-        if self.print_state:
-            print(np.sqrt(np.mean((pred_train - outputs) ** 2)))
-        return pred_train
+            print(pred_err)
+
+        return pred_err
 
     def predict(self, inputs, continuation_train=False):
-        """
-        Compute new prediction from given input and new weights
-
-        Args:
-            inputs (array of dimension (N_samples x n_inputs)): input data
-            continuation_train (bool): if True, start network from last training state
-
-        Returns:
-            array of output activations
-        """
         if inputs.ndim < 2:
             inputs = np.reshape(inputs, (1, -1))
         n_samples = inputs.shape[0]
 
-        last_input = self.last_input if continuation_train else np.zeros(self.n_inputs).reshape(1, -1)
+        last_input = self.last_input if continuation_train else np.zeros(self.n_input).reshape(1, -1)
         last_state = self.last_state if continuation_train else np.zeros(self.n_reservoir)
-        last_output = self.last_output if continuation_train else np.zeros(self.n_outputs)
+        last_output = self.last_output if continuation_train else np.zeros(self.n_output)
 
         inputs = np.vstack([last_input, inputs])
         states = np.vstack([last_state, np.zeros((n_samples, self.n_reservoir))])
-        outputs = np.vstack([last_output, np.zeros((n_samples, self.n_outputs))])
+        outputs = np.vstack([last_output, np.zeros((n_samples, self.n_output))])
 
         for i in range(n_samples):
-            states[i+1, :] = self._update(states[i, :], inputs[i+1, :], outputs[i, :])
-            outputs[i+1, :] = self.activation_out(
-                self.W_out.dot(np.concatenate([states[i+1, :], inputs[i+1, :]]))
+            states[i+1, :] = self._update(states[i, :],
+                                          np.hstack((1, inputs[i+1, :])),
+                                          np.hstack((1, outputs[i, :])))
+            outputs[i+1, :] = self.out_activation(
+                np.dot(self.WOut, np.concatenate([states[i + 1, :], inputs[i + 1, :], outputs[i, :]]))
             )
 
         self.last_input = inputs[-1, :]
         self.last_state = states[-1, :]
         self.last_output = outputs[-1, :]
 
-        return outputs[1:]
+        return outputs[-1:]

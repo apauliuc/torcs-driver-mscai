@@ -78,19 +78,24 @@ def load_training_data(folder, normalization=True):
         # for i in np.arange(9, 28):
         #     X_train[:, i] = normalize_to_int(X_full[:, i], minDistFromEdge, 200)
         #
-        # gear = range(-1, 6)
-        y_train[:, 0] = normalize_to_int(y_full[:, 0], -1, 6)
+
+        # # gear = range(-1, 6)
+        # gears = y_full[:, 0]
+        # gears[gears > 6] = 6
+        # y_train[:, 0] = normalize_to_int(gears, -1, 6)
+
         # steering = range(-1, 1)
-        y_train[:, 1] = normalize_to_int(y_full[:, 1], -1, 1)
+        y_train[:, 0] = np.clip(y_full[:, 1], -1, 1)
         # y_train[:,1] = normalize2(y_full[:,1], -1, 1)  # steering = range(-1, 1)
         # accelerate-brake = range(-1, 1)
         # for acceleration and break, compute their difference and normalize it
         accel_brake = y_full[:, 2] - y_full[:, 3]
-        y_train[:, 2] = normalize_to_int(accel_brake, accel_brake.min(), accel_brake.max())
+        y_train[:, 1] = normalize_to_int(accel_brake, -1, 1)
         # y_train[:,2] = normalize_to_int(accel_brake, -1, 1)
     else:
         y_train = y_full
 
     y_train = np.delete(y_train, 3, axis=1)
+    y_train = np.delete(y_train, 2, axis=1)
 
     return X_train, y_train, param_dict

@@ -6,7 +6,7 @@ import numpy as np
 import pickle
 
 def load_obj(name):
-    with open('parameters/' + name + '_' + '1152' + '.pkl', 'rb') as f:
+    with open('parameters/' + name + '_' + '3843' + '.pkl', 'rb') as f:
         return pickle.load(f)
 
 def safe_arctanh(x):
@@ -24,29 +24,49 @@ class MyDriver(Driver):
     def __init__(self, logdata=True):
         super().__init__(logdata)
 
-        net_p = load_obj('esn_parameters')
+        self.net_p = load_obj('esn_parameters')
 
         self.esn = ESN(
-            n_inputs=net_p['n_inputs'],
-            n_outputs=net_p['n_outputs'],
-            n_reservoir=net_p['n_reservoir'],
-            spectral_radius=net_p['spectral_radius'],
-            sparsity=net_p['sparsity'],
-            noise=net_p['noise'],
-            teacher_forcing=net_p['teacher_forcing'],
-            activation_out=np.tanh,
-            inverse_activation_out=safe_arctanh,
-            print_state=False
+            n_input=self.net_p['n_inputs'],
+            n_reservoir=self.net_p['n_reservoir'],
+            n_output=self.net_p['n_outputs'],
+            spectral_radius=self.net_p['spectral_radius'],
+            leaking_rate=self.net_p['leaking_rate'],
+            reservoir_density=self.net_p['reservoir_density'],
+            out_activation=np.tanh,
+            inverse_out_activation=safe_arctanh,
+            feedback=self.net_p['feedback'],
+            silent=False
         )
 
         self.esn.random_state_ = load_obj('esn_random_state')
         weights = load_obj('esn_weights')
         self.esn.W = weights['W']
-        self.esn.W_in = weights['W_in']
-        self.esn.W_feedback = weights['W_feedback']
-        self.esn.W_out = weights['W_out']
+        self.esn.WIn = weights['W_in']
+        self.esn.WFeedback = weights['W_feedback']
+        self.esn.WOut = weights['W_out']
 
-        self.params_dict = load_obj('norm_parameters')
+        # self.esn = ESN(
+        #     n_inputs=self.net_p['n_inputs'],
+        #     n_outputs=self.net_p['n_outputs'],
+        #     n_reservoir=self.net_p['n_reservoir'],
+        #     spectral_radius=self.net_p['spectral_radius'],
+        #     sparsity=self.net_p['sparsity'],
+        #     noise=self.net_p['noise'],
+        #     teacher_forcing=self.net_p['teacher_forcing'],
+        #     activation_out=np.tanh,
+        #     inverse_activation_out=safe_arctanh,
+        #     print_state=False
+        # )
+        #
+        # self.esn.random_state_ = load_obj('esn_random_state')
+        # weights = load_obj('esn_weights')
+        # self.esn.W = weights['W']
+        # self.esn.W_in = weights['W_in']
+        # self.esn.W_feedback = weights['W_feedback']
+        # self.esn.W_out = weights['W_out']
+
+        # self.params_dict = load_obj('norm_parameters')
 
         self.first_step = False
 
@@ -84,11 +104,15 @@ class MyDriver(Driver):
 
         X = np.concatenate((X, wheelSpin, distFromEdge))
 
-        results = self.esn.predict(X, self.first_step).reshape(3)
+        results = self.esn.predict(X, self.first_step).reshape(self.net_p['n_outputs'])
+
+        steer, acc_brake = results
 
         # gear = results[0]
-        steer = results[1]
-        acc_brake = results[2]
+        # steer = results[0]
+        # acc_brake = results[1]
+
+        # print(steer)
 
         command = Command()
 
@@ -115,7 +139,7 @@ class MyDriver(Driver):
         if not command.gear:
             command.gear = carstate.gear or 1
 
-        print(steer)
+        # print(steer)
         command.steering = np.clip(steer, -1, 1)
 
         self.first_step = True

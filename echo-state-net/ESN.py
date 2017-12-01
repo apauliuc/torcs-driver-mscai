@@ -63,8 +63,8 @@ class ESN:
             preactiv = (self.W.dot(state) +
                         self.W_in.dot(in_data))
 
-        return (self.activation_out(preactiv) +
-                self.noise * (self.random_state_.rand(1, self.n_reservoir) - 0.5))
+        return self.activation_out(preactiv)
+        # + self.noise * (self.random_state_.rand(1, self.n_reservoir) - 0.5))
 
     def fit(self, inputs, outputs, inspect=False):
         """
@@ -83,11 +83,36 @@ class ESN:
         if outputs.ndim < 2:
             outputs = np.reshape(outputs, (len(outputs), -1))
 
+        # # compute reservoir states
+        # if self.print_state:
+        #     print("computing states...")
+        # states = np.zeros((inputs.shape[0], self.n_reservoir))
+        # for i in range(1, inputs.shape[0]):
+        #     states[i, :] = self._update(states[i - 1],
+        #                                 inputs[i, :],
+        #                                 outputs[i - 1, :])
+        #
+        # # fit the weights to states and output
+        # if self.print_state:
+        #     print("fitting...")
+        # # compute washout time T_0 and skip these data points
+        # washout_time = min(int(inputs.shape[1] / 10), 100)
+        # M = np.hstack((states, inputs))
+        # M_inv = np.linalg.pinv(M[washout_time:, :])
+        # self.W_out = M_inv.dot(self.inverse_activation_out(outputs[washout_time:, :])).T
+
         # compute reservoir states
         if self.print_state:
             print("computing states...")
+
+        washout_time = min(int(inputs.shape[0] / 10), 100)
+        self.teacher_forcing = False
+
         states = np.zeros((inputs.shape[0], self.n_reservoir))
         for i in range(1, inputs.shape[0]):
+            if self.teacher_forcing is False and i > washout_time:
+                self.teacher_forcing = True
+
             states[i, :] = self._update(states[i - 1],
                                         inputs[i, :],
                                         outputs[i - 1, :])
@@ -96,10 +121,10 @@ class ESN:
         if self.print_state:
             print("fitting...")
         # compute washout time T_0 and skip these data points
-        washout_time = min(int(inputs.shape[1] / 10), 100)
-        M = np.hstack((states, inputs))
-        M_inv = np.linalg.pinv(M[washout_time:, :])
-        self.W_out = M_inv.dot(self.inverse_activation_out(outputs[washout_time:, :])).T
+        M = np.hstack((states[washout_time:, :], inputs[washout_time:, :], outputs[washout_time-1:-1, :]))
+        M_inv = np.linalg.pinv(M)
+        T_matrix = self.inverse_activation_out(outputs[washout_time:, :])
+        self.W_out = M_inv.dot(T_matrix).T
 
         self.last_state = states[-1, :]
         self.last_input = inputs[-1, :]
@@ -114,6 +139,7 @@ class ESN:
         # compute training error on computed weights
         if self.print_state:
             print("training error:")
+        M = np.hstack((states, inputs, outputs))
         pred_train = self.activation_out(M.dot(self.W_out.T))
         pred_err = np.sqrt(np.mean((pred_train - outputs) ** 2))
         if self.print_state:
@@ -146,7 +172,7 @@ class ESN:
         for i in range(n_samples):
             states[i+1, :] = self._update(states[i, :], inputs[i+1, :], outputs[i, :])
             outputs[i+1, :] = self.activation_out(
-                self.W_out.dot(np.concatenate([states[i+1, :], inputs[i+1, :]]))
+                self.W_out.dot(np.concatenate([states[i+1, :], inputs[i+1, :], outputs[i, :]]))
             )
 
         self.last_input = inputs[-1, :]
