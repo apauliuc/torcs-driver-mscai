@@ -1,7 +1,9 @@
 from neural_networks.echo_state.data_processing import load_training_data
+from neural_networks.echo_state.ESN import ESN
 import numpy as np
 import pickle
-from neural_networks.echo_state.ESN import ESN
+import glob
+import os
 
 err = 0.0
 
@@ -20,7 +22,7 @@ def save_obj(obj, name):
         pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
 
 
-def train_net(parameters, X_train, y_train, save=True):
+def train_net(parameters, X_train, y_train, param_dict, save=True):
     esn = ESN(
         n_input=parameters['n_input'],
         n_output=parameters['n_output'],
@@ -49,10 +51,17 @@ def train_net(parameters, X_train, y_train, save=True):
         save_obj(parameters, 'esn_parameters')
         save_obj(weights_dict, 'esn_weights')
         save_obj(esn.random_state_, 'esn_random_state')
-        # save_obj(param_dict, 'norm_parameters')
+        save_obj(param_dict, 'norm_parameters')
 
 
 if __name__ == '__main__':
+    script_dir = os.path.dirname(__file__)
+    project_dir = os.path.split(os.path.split(script_dir)[0])[0]
+
+    # driver = 'default_driver'
+    # train_data_path = os.path.join(project_dir, '/data/csv/{}/*.csv'.format(driver))
+    train_data_path = os.path.join(project_dir, 'data/csv')
+
     X, y, param_dict = load_training_data('train_data')
 
     params = {
@@ -65,6 +74,4 @@ if __name__ == '__main__':
         'feedback': True,
     }
 
-    train_net(params, X, y, save=True)
-
-
+    train_net(params, X, y, param_dict, save=True)

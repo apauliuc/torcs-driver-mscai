@@ -2,6 +2,8 @@ import glob
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import Imputer
+from copy import deepcopy
+import math
 
 
 def normalize(x, mmin, mmax):
@@ -15,7 +17,7 @@ def scale_array(x, mmin=0, mmax=1, new_min=-1, new_max=1):
 
 # noinspection PyPep8Naming
 def load_training_data(folder, normalization=True):
-    training_files = glob.glob(folder + '/bot*.csv')
+    training_files = glob.glob(folder + '/*.csv')
 
     first = True
     X_full = y_full = None
@@ -58,27 +60,25 @@ def load_training_data(folder, normalization=True):
         'minDistFromEdge': minDistFromEdge
     }
 
-    X_train = X_full
+    X_train = np.zeros(X_full.shape)
     y_train = np.zeros(y_full.shape)
 
     if normalization:
-        # # speedX = range(search min, search max)
-        # X_train[:, 0] = normalize_to_int(X_full[:, 0], minSpeedX, maxSpeedX)
-        # # speedY = range(search min, search max)
-        # X_train[:, 1] = normalize_to_int(X_full[:, 1], minSpeedY, maxSpeedY)
-        # # angle = range(-180, 180)
-        # X_train[:, 2] = normalize_to_int(X_full[:, 2], -180, 180)
-        # # currentGear = range(-1, 6)
-        # X_train[:, 3] = normalize_to_int(X_full[:, 3], -1, 6)
-        # # RPM = range(0, search max)
-        # X_train[:, 4] = normalize_to_int(X_full[:, 4], 0, maxRPM)
-        # # *wheelSpin = range(0, search max)
-        # for i in np.arange(5, 9):
-        #     X_train[:, i] = normalize_to_int(X_full[:, i], minWheelSpin, maxWheelSpin)
-        # # *sensorValues = range(0, 200)
-        # for i in np.arange(9, 28):
-        #     X_train[:, i] = normalize_to_int(X_full[:, i], minDistFromEdge, 200)
-        #
+        X_train[:, 0] = scale_array(deepcopy(X_full[:, 0]), minSpeedX, maxSpeedX)
+        X_train[:, 1] = scale_array(deepcopy(X_full[:, 1]), minSpeedY, maxSpeedY)
+        X_train[:, 2] = scale_array(deepcopy(np.clip(X_full[:, 2], -math.pi, math.pi)), -math.pi, math.pi)
+
+        gears = deepcopy(X_full[:, 3])
+        gears[gears > 6] = 6
+        gears[gears < -1] = -1
+        X_train[:, 3] = scale_array(gears, -1, 6)
+
+        X_train[:, 4] = scale_array(deepcopy(np.clip(X_full[:, 4], 0, maxRPM)), 0, maxRPM)
+
+        for i in np.arange(5, 9):
+            X_train[:, i] = scale_array(deepcopy(X_full[:, i]), minWheelSpin, maxWheelSpin)
+        for i in np.arange(9, 28):
+            X_train[:, i] = scale_array(deepcopy(X_full[:, i]), minDistFromEdge, 200)
 
         # # gear = range(-1, 6)
         # gears = y_full[:, 0]
@@ -86,7 +86,7 @@ def load_training_data(folder, normalization=True):
         # y_train[:, 0] = normalize_to_int(gears, -1, 6)
 
         # steering = range(-1, 1)
-        y_train[:, 0] = np.clip(y_full[:, 1], -1, 1)
+        y_train[:, 0] = scale_array(y_full[:, 1], y_full[:, 1].min(), y_full[:, 1].max())
         # y_train[:,1] = normalize2(y_full[:,1], -1, 1)  # steering = range(-1, 1)
 
         y_train[:, 1] = scale_array(np.clip(y_full[:, 2], 0, 1), new_min=-1, new_max=1)
