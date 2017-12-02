@@ -1,12 +1,12 @@
-from client.pytocl.driver import Driver
-from client.pytocl.car import State, Command
-from neural_networks.echo_state.ESN import ESN
+from pytocl.driver import Driver
+from pytocl.car import State, Command
+from ESN import ESN
 import numpy as np
 import pickle
 
 
 def load_obj(name):
-    with open('parameters/' + name + '_' + '3843' + '.pkl', 'rb') as f:
+    with open('parameters/' + name + '_' + '2782' + '.pkl', 'rb') as f:
         return pickle.load(f)
 
 
@@ -28,24 +28,24 @@ class MyDriver(Driver):
         self.net_p = load_obj('esn_parameters')
 
         self.esn = ESN(
-            n_input=self.net_p['n_inputs'],
+            n_input=self.net_p['n_input'],
             n_reservoir=self.net_p['n_reservoir'],
-            n_output=self.net_p['n_outputs'],
+            n_output=self.net_p['n_output'],
             spectral_radius=self.net_p['spectral_radius'],
             leaking_rate=self.net_p['leaking_rate'],
             reservoir_density=self.net_p['reservoir_density'],
             out_activation=np.tanh,
             inverse_out_activation=safe_arctanh,
-            feedback=self.net_p['feedback'],
-            silent=False
+            feedback=False,
+            silent=True
         )
 
         self.esn.random_state_ = load_obj('esn_random_state')
         weights = load_obj('esn_weights')
         self.esn.W = weights['W']
-        self.esn.WIn = weights['W_in']
-        self.esn.WFeedback = weights['W_feedback']
-        self.esn.WOut = weights['W_out']
+        self.esn.WInput = weights['WInput']
+        self.esn.WFeedback = weights['WFeedback']
+        self.esn.WOut = weights['WOut']
 
         # self.esn = ESN(
         #     n_inputs=self.net_p['n_inputs'],
@@ -73,7 +73,7 @@ class MyDriver(Driver):
 
     def normalize(self, x, mmin, mmax):
         norm = (x - mmin) / (mmax - mmin)
-        return np.clip(norm, -1, 1)
+        return np.clip(norm, mmin, mmax)
 
     def invert_normalize(self, x, mmin, mmax):
         x = np.clip(x, -1, 1)
@@ -105,33 +105,30 @@ class MyDriver(Driver):
 
         X = np.concatenate((X, wheelSpin, distFromEdge))
 
-        results = self.esn.predict(X, self.first_step).reshape(self.net_p['n_outputs'])
+        results = self.esn.predict(X, self.first_step).reshape(self.net_p['n_output'])
 
-        steer, acc_brake = results
-
-        # gear = results[0]
-        # steer = results[0]
-        # acc_brake = results[1]
-
-        # print(steer)
+        steer, acc, brake = results
 
         command = Command()
 
-        acc_brake = np.clip(acc_brake, -1, 1)
+        print(acc)
 
-        # gear = self.normalize_to_int(gear, -1, 1, -1, 6)
-        # gear = int(round(gear))
+        acc = self.normalize(np.clip(acc, -1, 1), -1, 1)
+        brake = self.normalize(np.clip(brake, -1, 1), -1, 1)
 
-        # print('{} {}'.format(gear, steer))
 
-        if acc_brake > 0:
+        # print(acc)
+        # print(brake)
+        # print(steer)
+
+        if acc > 0:
             command.brake = 0
-            command.accelerator = acc_brake
+            command.accelerator = acc
 
             if carstate.rpm > 8000:
                 command.gear = carstate.gear + 1
         else:
-            command.brake = np.abs(acc_brake)
+            command.brake = brake
             command.accelerator = 0
 
             if carstate.rpm < 2500:

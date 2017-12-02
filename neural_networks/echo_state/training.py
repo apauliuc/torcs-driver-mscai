@@ -1,7 +1,7 @@
-from data_processing import load_training_data
+from neural_networks.echo_state.data_processing import load_training_data
 import numpy as np
-from ESN import ESN
 import pickle
+from neural_networks.echo_state.ESN import ESN
 
 err = 0.0
 
@@ -22,72 +22,49 @@ def save_obj(obj, name):
 
 def train_net(parameters, X_train, y_train, save=True):
     esn = ESN(
-        n_inputs=parameters['n_inputs'],
-        n_outputs=parameters['n_outputs'],
+        n_input=parameters['n_input'],
+        n_output=parameters['n_output'],
         n_reservoir=parameters['n_reservoir'],
         spectral_radius=parameters['spectral_radius'],
-        sparsity=parameters['sparsity'],
-        noise=parameters['noise'],
-        teacher_forcing=parameters['teacher_forcing'],
-        activation_out=np.tanh,
-        inverse_activation_out=safe_arctanh,
-        print_state=True,
+        leaking_rate=parameters['leaking_rate'],
+        reservoir_density=parameters['reservoir_density'],
+        out_activation=np.tanh,
+        inverse_out_activation=safe_arctanh,
+        feedback=parameters['feedback'],
+        silent=False
     )
 
     global err
 
-    train_predict, err = esn.fit(X_train, y_train)
+    err = esn.fit(X_train, y_train)
 
     if save:
         weights_dict = {
             'W': esn.W,
-            'W_in': esn.W_in,
-            'W_feedback': esn.W_feedback,
-            'W_out': esn.W_out
+            'WInput': esn.WInput,
+            'WFeedback': esn.WFeedback,
+            'WOut': esn.WOut
         }
 
         save_obj(parameters, 'esn_parameters')
         save_obj(weights_dict, 'esn_weights')
         save_obj(esn.random_state_, 'esn_random_state')
-        save_obj(param_dict, 'norm_parameters')
+        # save_obj(param_dict, 'norm_parameters')
 
 
 if __name__ == '__main__':
     X, y, param_dict = load_training_data('train_data')
 
-    # print(y.shape)
-
     params = {
-        'n_inputs': 28,
-        'n_outputs': 2,
-        'n_reservoir': 100,
-        'spectral_radius': 0.8,
-        'sparsity': 0.2,
-        'noise': 0.001,
-        'teacher_forcing': True
+        'n_input': 28,
+        'n_output': 3,
+        'n_reservoir': 75,
+        'spectral_radius': 0.9,
+        'leaking_rate': 0.75,
+        'reservoir_density': 0.8,
+        'feedback': True,
     }
 
     train_net(params, X, y, save=True)
 
-    # reservoir_size = [100, 90, 80, 70, 60, 50]
-    # spectr_radius = [0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95]
-    # sparse = [0.01, 0.05, 0.1, 0.15, 0.2, 0.3, 0.5]
-    #
-    # i = 0
-    #
-    # for r in reservoir_size:
-    #     for s in spectr_radius:
-    #         for sp in sparse:
-    #             params = {
-    #                 'n_inputs': 28,
-    #                 'n_outputs': 2,
-    #                 'n_reservoir': r,
-    #                 'spectral_radius': s,
-    #                 'sparsity': sp,
-    #                 'noise': 0.001,
-    #                 'teacher_forcing': True
-    #             }
-    #
-    #             print('{}: {}'.format(i, params))
-    #
-    #             train_net(params, X, y, save=False)
+

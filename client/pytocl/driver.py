@@ -23,8 +23,8 @@ class Driver:
     """
 
     def __init__(self, logdata=True):
-        self.f = open('data.csv', 'a', encoding='UTF-8')
-        self.writer = csv.writer(self.f)
+        # self.f = open('data.csv', 'a', encoding='UTF-8')
+        # self.writer = csv.writer(self.f)
 
         self.steering_ctrl = CompositeController(
             ProportionalController(0.4),
@@ -57,7 +57,7 @@ class Driver:
         if self.data_logger:
             self.data_logger.close()
             self.data_logger = None
-        self.f.close()
+        # self.f.close()
 
     def drive(self, carstate: State) -> Command:
         """
@@ -97,8 +97,8 @@ class Driver:
         ])
 
         # write to file
-        self.writer.writerow(data)
-        self.f.flush()
+        # self.writer.writerow(data)
+        # self.f.flush()
 
         return command
 

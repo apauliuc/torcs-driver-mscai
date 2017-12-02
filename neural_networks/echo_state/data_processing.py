@@ -8,13 +8,14 @@ def normalize(x, mmin, mmax):
     return (x - mmin) / (mmax - mmin)
 
 
-def normalize_to_int(x, mmin, mmax, a=-1, b=1):
-    return (b - a) * (x - mmin) / (mmax - mmin) + a
+def scale_array(x, mmin=0, mmax=1, new_min=-1, new_max=1):
+    x = normalize(x, mmin, mmax)
+    return x * (new_max - new_min) + new_min
 
 
 # noinspection PyPep8Naming
 def load_training_data(folder, normalization=True):
-    training_files = glob.glob(folder + '/*.csv')
+    training_files = glob.glob(folder + '/bot*.csv')
 
     first = True
     X_full = y_full = None
@@ -87,15 +88,19 @@ def load_training_data(folder, normalization=True):
         # steering = range(-1, 1)
         y_train[:, 0] = np.clip(y_full[:, 1], -1, 1)
         # y_train[:,1] = normalize2(y_full[:,1], -1, 1)  # steering = range(-1, 1)
-        # accelerate-brake = range(-1, 1)
-        # for acceleration and break, compute their difference and normalize it
-        accel_brake = y_full[:, 2] - y_full[:, 3]
-        y_train[:, 1] = normalize_to_int(accel_brake, -1, 1)
-        # y_train[:,2] = normalize_to_int(accel_brake, -1, 1)
+
+        y_train[:, 1] = scale_array(np.clip(y_full[:, 2], 0, 1), new_min=-1, new_max=1)
+        y_train[:, 2] = scale_array(np.clip(y_full[:, 3], 0, 1), new_min=-1, new_max=1)
+
+        # # accelerate-brake = range(-1, 1)
+        # # for acceleration and break, compute their difference and normalize it
+        # accel_brake = y_full[:, 2] - y_full[:, 3]
+        # y_train[:, 1] = normalize_to_int(accel_brake, -1, 1)
+        # # y_train[:,2] = normalize_to_int(accel_brake, -1, 1)
     else:
         y_train = y_full
 
     y_train = np.delete(y_train, 3, axis=1)
-    y_train = np.delete(y_train, 2, axis=1)
+    # y_train = np.delete(y_train, 2, axis=1)
 
     return X_train, y_train, param_dict
