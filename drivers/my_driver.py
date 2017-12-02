@@ -1,6 +1,6 @@
-from pytocl.driver import Driver
-from pytocl.car import State, Command
-from drivers.finalESN import ESN
+from client.pytocl.driver import Driver
+from client.pytocl.car import State, Command
+from neural_networks.echo_state.ESN import ESN
 import numpy as np
 import pickle
 

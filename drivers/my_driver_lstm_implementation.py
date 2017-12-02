@@ -1,5 +1,5 @@
-from pytocl.driver import Driver
-from pytocl.car import State, Command
+from client.pytocl.driver import Driver
+from client.pytocl.car import State, Command
 
 import numpy as np
 import pickle
