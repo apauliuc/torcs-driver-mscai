@@ -22,7 +22,7 @@ def save_obj(obj, name):
         pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
 
 
-def train_net(parameters, X_train, y_train, param_dict, save=True):
+def train_net(parameters, X_train, y_train, save=True):
     esn = ESN(
         n_input=parameters['n_input'],
         n_output=parameters['n_output'],
@@ -51,7 +51,6 @@ def train_net(parameters, X_train, y_train, param_dict, save=True):
         save_obj(parameters, 'esn_parameters')
         save_obj(weights_dict, 'esn_weights')
         save_obj(esn.random_state_, 'esn_random_state')
-        save_obj(param_dict, 'norm_parameters')
 
 
 if __name__ == '__main__':
@@ -62,16 +61,18 @@ if __name__ == '__main__':
     # train_data_path = os.path.join(project_dir, '/data/csv/{}/*.csv'.format(driver))
     train_data_path = os.path.join(project_dir, 'data/csv')
 
-    X, y, param_dict = load_training_data('train_data')
+    training_files = glob.glob(train_data_path + '/bot*.csv')
+
+    X, y = load_training_data(training_files)
 
     params = {
         'n_input': 28,
         'n_output': 3,
-        'n_reservoir': 75,
-        'spectral_radius': 0.9,
-        'leaking_rate': 0.75,
+        'n_reservoir': 90,
+        'spectral_radius': 0.85,
+        'leaking_rate': 0.5,
         'reservoir_density': 0.8,
         'feedback': True,
     }
 
-    train_net(params, X, y, param_dict, save=True)
+    train_net(params, X, y, save=True)

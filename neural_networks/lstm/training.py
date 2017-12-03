@@ -9,6 +9,8 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 from torch.autograd import Variable
 
+continue_train = True
+
 if __name__ == '__main__':
     script_dir = os.path.dirname(__file__)
     project_dir = os.path.split(os.path.split(script_dir)[0])[0]
@@ -17,22 +19,26 @@ if __name__ == '__main__':
     # train_data_path = os.path.join(project_dir, '/data/csv/{}/*.csv'.format(driver))
     train_data_path = os.path.join(project_dir, 'data/csv')
 
-    training_files = glob.glob(train_data_path + '/*.csv')
+    training_files = glob.glob(train_data_path + '/bot*.csv')
 
     training_sets = load_training_data(training_files)
 
     INPUT_SIZE = 28
-    HIDDEN_SIZE = 28
+    HIDDEN_SIZE = 56
     NUM_LAYERS = 3
     BATCH_SIZE = 100
     NUM_EPOCHS = 10
-    LEARNING_RATE = 0.0001
+    LEARNING_RATE = 0.00001
 
-    lstm_nn = LSTM(INPUT_SIZE, HIDDEN_SIZE, NUM_LAYERS, 2, BATCH_SIZE)
-    criterion = nn.MSELoss()
+    lstm_nn = LSTM(INPUT_SIZE, HIDDEN_SIZE, NUM_LAYERS, 3, BATCH_SIZE)
+
+    if continue_train:
+        lstm_nn.load_state_dict(torch.load('rnn_params.pt'))
 
     # Same learning rate
+    criterion = nn.MSELoss()
     optimizer = torch.optim.Adam(lstm_nn.parameters(), lr=LEARNING_RATE)
+
     for epoch in np.arange(NUM_EPOCHS):
         epoch_error = 0
         print('Epoch [%d/%d]' % (epoch + 1, NUM_EPOCHS))
@@ -59,7 +65,7 @@ if __name__ == '__main__':
                     print('    step: [%d/%d], loss: %.4f'
                           % (i + 1, len(training_sets[f].target_tensor) // BATCH_SIZE, loss.data[0]))
 
-        print('Epoch error: {}'.format(epoch_error))
+        print('Epoch error: {}\n'.format(epoch_error))
 
     print('Training done')
 

@@ -120,4 +120,4 @@ class ESN(object):
         self.last_state = states[-1, :]
         self.last_output = outputs[-1, :]
 
-        return self.out_activation(outputs[-1:])
+        return outputs[-1:]

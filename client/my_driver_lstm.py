@@ -50,14 +50,13 @@ class MyDriver(Driver):
     def __init__(self, logdata=True):
         super().__init__(logdata)
 
-        self.neural_net = LSTM(28, 28, 3, 2)
+        self.neural_net = LSTM(28, 56, 3, 3)
         self.neural_net.load_state_dict(torch.load('parameters/rnn_params.pt'))
 
         self.params_dict = load_obj('norm_parameters')
 
     def normalize(self, x, mmin, mmax):
-        norm = (x - mmin) / (mmax - mmin)
-        return np.clip(norm, mmin, mmax)
+        return np.clip((x - mmin) / (mmax - mmin), 0, 1)
 
     def invert_normalize(self, x, mmin, mmax):
         x = np.clip(x, -1, 1)
@@ -65,7 +64,7 @@ class MyDriver(Driver):
 
     def scale_array(self, x, mmin=0.0, mmax=1.0, new_min=-1.0, new_max=1.0):
         x = self.normalize(x, mmin, mmax)
-        return x * (new_max - new_min) + new_min
+        return np.clip(x * (new_max - new_min) + new_min, new_min, new_max)
 
     def drive(self, carstate: State) -> Command:
         X = np.array([
@@ -75,14 +74,8 @@ class MyDriver(Driver):
             self.scale_array(carstate.gear, -1, 6),
             self.scale_array(carstate.rpm, 0, self.params_dict['maxRPM'])
         ])
-        wheelSpin = [self.scale_array(i, self.params_dict['minWheelSpin'], self.params_dict['maxWheelSpin'])
+        wheelSpin = [self.scale_array(i, 0, self.params_dict['maxWheelSpin'])
                      for i in list(carstate.wheel_velocities)]
-        # wheels = list(carstate.wheel_velocities)
-        # wheelSpin = np.zeros(len(wheels))
-        # for i in np.arange(len(wheels)):
-        #     wheelSpin[i] = self.scale_array(wheels[i],
-        #                                     self.params_dict['minWheelSpin'][i],
-        #                                     self.params_dict['maxWheelSpin'][i])
 
         distFromEdge = [self.scale_array(i, 0, 200)
                         for i in list(carstate.distances_from_edge)]
@@ -105,61 +98,54 @@ class MyDriver(Driver):
         params = Variable(X.view(-1, 1, 28))
         output = self.neural_net(params)
 
-        # results = output.resize(3).data.numpy()
-        # steer = results[0]
-        # acc = results[1]
-        # brake = results[2]
-        #
-        # command = Command()
-        #
-        # acc = self.normalize(np.clip(acc, -1, 1), -1, 1)
-        # brake = self.normalize(np.clip(brake, -1, 1), -1, 1)
-        #
-        # if acc > 0:
-        #     command.brake = 0
-        #     command.accelerator = acc
-        #
-        #     if carstate.rpm > 8000:
-        #         command.gear = carstate.gear + 1
-        # else:
-        #     command.brake = brake
-        #     command.accelerator = 0
-        #
-        #     if carstate.rpm < 2500:
-        #         command.gear = carstate.gear - 1
-        #
-        # if not command.gear:
-        #     command.gear = carstate.gear or 1
-        #
-        # print(steer)
-        # command.steering = np.clip(steer, -1, 1)
-
-        results = output.resize(2).data.numpy()
-        # gear = results[0]
+        results = output.resize(3).data.numpy()
         steer = results[0]
-        accel_brake = results[1]
+        acc = results[1]
+        brake = results[2]
 
         command = Command()
 
-        accel_brake = min(max(0, accel_brake), 1)
-        if accel_brake >= 0.5:
+        acc = self.normalize(acc, -1, 1)
+        brake = self.normalize(brake, -1, 1)
+
+        if acc > 0:
             command.brake = 0
-            command.accelerator = self.scale_array(accel_brake, 0.5, 1, 0, 1)
+            command.accelerator = acc
 
             if carstate.rpm > 8000:
                 command.gear = carstate.gear + 1
         else:
-            command.brake = self.scale_array(accel_brake, 0.0, 0.5, 0, 1)
+            command.brake = brake
             command.accelerator = 0
 
-            if carstate.rpm < 2500 and carstate.gear != 1:
+            if carstate.rpm < 2500:
                 command.gear = carstate.gear - 1
 
-        # gear = min(max(0, gear), 1)
-        # gear = self.scale_array(gear, 0.0, 1.0, -1, 6)
-        # command.gear = int(round(gear))
+        if not command.gear:
+            command.gear = carstate.gear or 1
 
-        steer = min(max(0, steer), 1)
-        command.steering = self.scale_array(steer, 0.0, 1.0)
+        print('{} - {}'.format(steer, self.scale_array(steer, 0, 1)))
+        command.steering = self.scale_array(steer, 0, 1)
+
+        # results = output.resize(2).data.numpy()
+        # # gear = results[0]
+        # steer = results[0]
+        # accel_brake = results[1]
+        #
+        # command = Command()
+        #
+        # accel_brake = min(max(0, accel_brake), 1)
+        # if accel_brake >= 0.5:
+        #     command.brake = 0
+        #     command.accelerator = self.scale_array(accel_brake, 0.5, 1, 0, 1)
+        #
+        #     if carstate.rpm > 8000:
+        #         command.gear = carstate.gear + 1
+        # else:
+        #     command.brake = self.scale_array(accel_brake, 0.0, 0.5, 0, 1)
+        #     command.accelerator = 0
+        #
+        #     if carstate.rpm < 2500 and carstate.gear != 1:
+        #         command.gear = carstate.gear - 1
 
         return command

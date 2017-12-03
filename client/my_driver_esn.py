@@ -7,7 +7,7 @@ import math
 
 
 def load_obj(name):
-    with open('parameters/' + name + '_' + '2216' + '.pkl', 'rb') as f:
+    with open('parameters/' + name + '.pkl', 'rb') as f:
         return pickle.load(f)
 
 
@@ -26,7 +26,9 @@ class MyDriver(Driver):
     def __init__(self, logdata=True):
         super().__init__(logdata)
 
-        self.net_p = load_obj('esn_parameters')
+        no = '553'
+
+        self.net_p = load_obj('esn_parameters_' + no)
 
         self.esn = ESN(
             n_input=self.net_p['n_input'],
@@ -41,8 +43,8 @@ class MyDriver(Driver):
             silent=True
         )
 
-        self.esn.random_state_ = load_obj('esn_random_state')
-        weights = load_obj('esn_weights')
+        self.esn.random_state_ = load_obj('esn_random_state_' + no)
+        weights = load_obj('esn_weights_' + no)
         self.esn.W = weights['W']
         self.esn.WInput = weights['WInput']
         self.esn.WFeedback = weights['WFeedback']
@@ -50,11 +52,10 @@ class MyDriver(Driver):
 
         self.params_dict = load_obj('norm_parameters')
 
-        self.first_step = False
+        self.prev_input = False
 
     def normalize(self, x, mmin, mmax):
-        norm = (x - mmin) / (mmax - mmin)
-        return np.clip(norm, mmin, mmax)
+        return np.clip((x - mmin) / (mmax - mmin), 0, 1)
 
     def invert_normalize(self, x, mmin, mmax):
         x = np.clip(x, -1, 1)
@@ -62,7 +63,7 @@ class MyDriver(Driver):
 
     def scale_array(self, x, mmin=0, mmax=1, new_min=-1, new_max=1):
         x = self.normalize(x, mmin, mmax)
-        return x * (new_max - new_min) + new_min
+        return np.clip(x * (new_max - new_min) + new_min, new_min, new_max)
 
     def drive(self, carstate: State) -> Command:
         X = np.array([
@@ -72,14 +73,10 @@ class MyDriver(Driver):
             self.scale_array(carstate.gear, -1, 6),
             self.scale_array(carstate.rpm, 0, self.params_dict['maxRPM'])
         ])
-        wheels = list(carstate.wheel_velocities)
-        wheelSpin = np.zeros(len(wheels))
-        for i in np.arange(len(wheels)):
-            wheelSpin[i] = self.scale_array(wheels[i],
-                                            self.params_dict['minWheelSpin'][i],
-                                            self.params_dict['maxWheelSpin'][i])
+        wheelSpin = [self.scale_array(i, 0, self.params_dict['maxWheelSpin'])
+                     for i in list(carstate.wheel_velocities)]
 
-        distFromEdge = [self.scale_array(i, self.params_dict['minDistFromEdge'], 200)
+        distFromEdge = [self.scale_array(i, 0, 200)
                         for i in list(carstate.distances_from_edge)]
 
         # X = np.array([
@@ -94,7 +91,7 @@ class MyDriver(Driver):
 
         X = np.concatenate((X, wheelSpin, distFromEdge))
 
-        results = self.esn.predict(X, self.first_step).reshape(self.net_p['n_output'])
+        results = self.esn.predict(X, self.prev_input).reshape(self.net_p['n_output'])
 
         steer, acc, brake = results
 
@@ -102,8 +99,8 @@ class MyDriver(Driver):
 
         print(acc)
 
-        acc = self.normalize(np.clip(acc, -1, 1), -1, 1)
-        brake = self.normalize(np.clip(brake, -1, 1), -1, 1)
+        acc = self.normalize(acc, -1, 1)
+        brake = self.normalize(brake, -1, 1)
 
         # print(acc)
         # print(brake)
@@ -128,6 +125,6 @@ class MyDriver(Driver):
         # print(steer)
         command.steering = np.clip(steer, -1, 1)
 
-        self.first_step = True
+        self.prev_input = True
 
         return command
