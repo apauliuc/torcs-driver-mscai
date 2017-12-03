@@ -67,7 +67,7 @@ class State(Value):
 
     def __init__(self, sensor_dict):
         """Creates decoded car state from sensor value dictionary."""
-        self.angle = self.float_value(sensor_dict, 'angle')
+        self.angle = self.float_value(sensor_dict, 'angle') * DEGREE_PER_RADIANS
         self.current_lap_time = self.float_value(sensor_dict, 'curLapTime')
         self.damage = self.int_value(sensor_dict, 'damage')
         self.distance_from_start = self.float_value(
