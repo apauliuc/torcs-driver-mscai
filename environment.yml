@@ -6,6 +6,8 @@ dependencies:
 - ca-certificates=2017.08.26=h1d4fec5_0
 - certifi=2017.11.5=py35h9749603_0
 - cffi=1.11.2=py35hc7b2db7_0
+- cudatoolkit=7.5=2
+- cudnn=5.1.10=cuda7.5_0
 - freetype=2.8=hab7d2ae_1
 - icu=58.2=h9c2bf20_1
 - intel-openmp=2018.0.0=hc7b2577_8
@@ -22,17 +24,19 @@ dependencies:
 - libxslt=1.1.29=h78d5cac_6
 - lxml=4.1.1=py35ha19ceee_0
 - mkl=2018.0.1=h19d6760_4
+- nccl=1.3.4=cuda7.5_1
 - ncurses=6.0=h9df7e31_2
 - numpy=1.13.3=py35hd829ed6_0
 - olefile=0.44=py35h2c86149_0
 - openssl=1.0.2m=h26d622b_1
 - pandas=0.21.0=py35hee8c687_1
-- pillow=4.2.1=py35h03abc04_0
+- pillow=4.3.0=py35h550890c_1
 - pip=9.0.1=py35h7e7da9d_4
 - psutil=5.4.1=py35h2e39a06_0
 - pycparser=2.18=py35h61b3040_1
 - python=3.5.4=h417fded_24
 - python-dateutil=2.6.1=py35h90d5b31_1
+- pytorch=0.2.0=py35cuda7.5cudnn5.1_0
 - pytz=2017.3=py35hb13c558_0
 - pyyaml=3.12=py35h46ef4ae_1
 - readline=7.0=ha6073c6_4
@@ -42,14 +46,13 @@ dependencies:
 - six=1.11.0=py35h423b573_1
 - sqlite=3.20.1=hb898158_2
 - tk=8.6.7=hc745277_3
+- torchvision=0.1.8=py35_0
 - wheel=0.30.0=py35hd3883cf_1
 - xz=5.2.3=h55aa19d_2
 - yaml=0.1.7=had09818_2
 - zlib=1.2.11=ha838bed_2
 - cuda80=1.0=0
-- pytorch=0.2.0=py35hb1547bd_4cu80
-- torchvision=0.1.9=py35h72e4c6f_1
 - pip:
-  - torch==0.2.0.post4
+  - torch==0.2.0.post0
 prefix: /home/andrei/anaconda3/envs/torcs
 
