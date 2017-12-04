@@ -26,9 +26,10 @@ class MyDriver(Driver):
     def __init__(self, logdata=True):
         super().__init__(logdata)
 
-        no = '1079'
+        # no = '1079'
+        # self.net_p = load_obj('esn_parameters_' + no)
 
-        self.net_p = load_obj('esn_parameters_' + no)
+        self.net_p = load_obj('esn_parameters')
 
         self.esn = ESN(
             n_input=self.net_p['n_input'],
@@ -43,8 +44,11 @@ class MyDriver(Driver):
             silent=True
         )
 
-        self.esn.random_state_ = load_obj('esn_random_state_' + no)
-        weights = load_obj('esn_weights_' + no)
+        # self.esn.random_state_ = load_obj('esn_random_state_' + no)
+        # weights = load_obj('esn_weights_' + no)
+
+        self.esn.random_state_ = load_obj('esn_random_state')
+        weights = load_obj('esn_weights')
         self.esn.W = weights['W']
         self.esn.WInput = weights['WInput']
         self.esn.WFeedback = weights['WFeedback']

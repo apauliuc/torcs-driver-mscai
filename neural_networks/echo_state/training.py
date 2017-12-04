@@ -18,8 +18,13 @@ def safe_arctanh(x):
     return np.arctanh(x)
 
 
-def save_obj(obj, name):
+def save_obj_err(obj, name):
     with open('parameter_files/' + name + '_%.0f.pkl' % (err * 10000), 'wb') as f:
+        pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
+
+
+def save_obj(obj, name):
+    with open(save_path + name + '.pkl', 'wb') as f:
         pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
 
 
@@ -61,18 +66,19 @@ if __name__ == '__main__':
     # driver = 'default_driver'
     # train_data_path = os.path.join(project_dir, 'data/csv/{}'.format(driver))
     train_data_path = os.path.join(project_dir, 'data/csv')
-
     training_files = glob.glob(train_data_path + '/*.csv')
+
+    save_path = os.path.join(project_dir, 'client/parameters/')
 
     X, y = load_training_data(training_files)
 
     params = {
         'n_input': X.shape[1],
         'n_output': y.shape[1],
-        'n_reservoir': 80,
-        'spectral_radius': 0.74,
-        'leaking_rate': 0.85,
-        'reservoir_density': 0.2,
+        'n_reservoir': 250,
+        'spectral_radius': 0.8,
+        'leaking_rate': 0.9,
+        'reservoir_density': 0.1,
         'feedback': True,
     }
 

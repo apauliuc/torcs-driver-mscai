@@ -7,6 +7,7 @@ from collections import defaultdict
 
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 from torch.autograd import Variable
 
 
@@ -38,3 +39,4 @@ class LSTM(nn.Module):
         output = self.out(lstm_out.view(len(x), -1))
         self.hidden = self.init_hidden(hidden_out)
         return output
+        # return F.sigmoid(output)

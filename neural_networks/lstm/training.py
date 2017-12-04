@@ -25,9 +25,11 @@ if __name__ == '__main__':
     # driver = 'default_driver'
     # train_data_path = os.path.join(project_dir, 'data/csv/{}'.format(driver))
     train_data_path = os.path.join(project_dir, 'data/csv')
+    training_files = glob.glob(train_data_path + '/f-speedway*.csv')
 
-    training_files = glob.glob(train_data_path + '/*.csv')
+    save_path = os.path.join(project_dir, 'client/parameters/')
 
+    print('Loading data...')
     training_sets = load_training_data(training_files)
 
     params = {
@@ -37,25 +39,26 @@ if __name__ == '__main__':
         'layers': 3
     }
 
-    save_obj(params, 'rnn_params')
+    save_obj(params, save_path + 'rnn_params')
 
     INPUT_SIZE = params['input']
     HIDDEN_SIZE = params['hidden']
     OUTPUT_SIZE = params['output']
     NUM_LAYERS = params['layers']
-    BATCH_SIZE = 100
-    NUM_EPOCHS = 20
-    LEARNING_RATE = 0.00001
+    BATCH_SIZE = 2
+    NUM_EPOCHS = 15
+    LEARNING_RATE = 0.0001
 
     lstm_nn = LSTM(INPUT_SIZE, HIDDEN_SIZE, NUM_LAYERS, OUTPUT_SIZE, BATCH_SIZE)
 
     if continue_train:
-        lstm_nn.load_state_dict(torch.load('weight_params.pt'))
+        lstm_nn.load_state_dict(torch.load(save_path + 'weight_params.pt'))
 
     # Same learning rate
     criterion = nn.MSELoss()
     optimizer = torch.optim.Adam(lstm_nn.parameters(), lr=LEARNING_RATE)
 
+    print('Training the LSTM...')
     for epoch in np.arange(NUM_EPOCHS):
         epoch_error = 0
         print('Epoch [%d/%d]' % (epoch + 1, NUM_EPOCHS))
@@ -78,13 +81,13 @@ if __name__ == '__main__':
 
                 epoch_error += loss.data[0]
 
-                if (i + 1) % BATCH_SIZE == 0:
-                    print('    step: [%d/%d], loss: %.4f'
-                          % (i + 1, len(training_sets[f].target_tensor) // BATCH_SIZE, loss.data[0]))
+                # if (i + 1) % BATCH_SIZE == 0:
+                #     print('    step: [%d/%d], loss: %.4f'
+                #           % (i + 1, len(training_sets[f].target_tensor) // BATCH_SIZE, loss.data[0]))
 
         print('Epoch error: {}\n'.format(epoch_error))
 
     print('Training done')
 
     lstm_nn.cpu()
-    torch.save(lstm_nn.state_dict(), 'weight_params.pt')
+    torch.save(lstm_nn.state_dict(), save_path + 'weight_params.pt')

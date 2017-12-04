@@ -7,6 +7,7 @@ import math
 
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 from torch.autograd import Variable
 
 
@@ -119,8 +120,8 @@ class MyDriver(Driver):
 
         command = Command()
 
-        acc = self.normalize(acc, 0, 1)
-        brake = self.normalize(brake, 0, 1)
+        # acc = self.normalize(acc, 0, 1)
+        # brake = self.normalize(brake, 0, 1)
 
         if acc > 0:
             command.brake = 0
