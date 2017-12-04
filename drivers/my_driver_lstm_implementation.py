@@ -38,6 +38,7 @@ class RNN_LSTM(nn.Module):
         return output
 
 
+# noinspection PyMethodMayBeStatic
 class MyDriver(Driver):
 
     def __init__(self, logdata=True):

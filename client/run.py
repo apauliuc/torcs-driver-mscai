@@ -1,8 +1,10 @@
 #! /usr/bin/env python3
 
 from pytocl.main import main
-from pytocl.driver import Driver
-from my_driver import MyDriver
+# from client.pytocl.driver import Driver
+
+# from my_driver_esn import MyDriver
+from my_driver_lstm import MyDriver
 
 if __name__ == '__main__':
-    main(Driver(logdata=False))
+    main(MyDriver(logdata=False))

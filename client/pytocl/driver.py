@@ -23,16 +23,8 @@ class Driver:
     """
 
     def __init__(self, logdata=True):
-
-        self.f = open('../data/csv/default_driver/data.csv', 'a+', encoding='UTF-8')
-        self.writer = csv.writer(self.f)
-        row_count = sum(1 for row in self.f)
-        if row_count == 0:
-            headers = 'ACCELERATION,BRAKE,STEERING,SPEED,TRACK_POSITION,ANGLE_TO_TRACK_AXIS,' \
-                      'TRACK_EDGE_0,TRACK_EDGE_1,TRACK_EDGE_2,TRACK_EDGE_3,TRACK_EDGE_4,TRACK_EDGE_5,' \
-                      'TRACK_EDGE_6,TRACK_EDGE_7,TRACK_EDGE_8,TRACK_EDGE_9,TRACK_EDGE_10,TRACK_EDGE_11,' \
-                      'TRACK_EDGE_12,TRACK_EDGE_13,TRACK_EDGE_14,TRACK_EDGE_15,TRACK_EDGE_16,TRACK_EDGE_17'.split(',')
-            self.writer.writerow(headers)
+        # self.f = open('data.csv', 'a', encoding='UTF-8')
+        # self.writer = csv.writer(self.f)
 
         self.steering_ctrl = CompositeController(
             ProportionalController(0.4),
@@ -53,7 +45,7 @@ class Driver:
         distances in these directions is returned in ``state.State.tracks``.
         """
         return -90, -75, -60, -45, -30, -20, -15, -10, -5, 0, 5, 10, 15, 20, \
-               30, 45, 60, 75, 90
+            30, 45, 60, 75, 90
 
     def on_shutdown(self):
         """
@@ -65,7 +57,7 @@ class Driver:
         if self.data_logger:
             self.data_logger.close()
             self.data_logger = None
-        self.f.close()
+        # self.f.close()
 
     def drive(self, carstate: State) -> Command:
         """
@@ -91,18 +83,22 @@ class Driver:
         # Response: [gear, steering, accelerate, brake]
         # only add data if passed the warm-up stage
         data = np.array([
+            carstate.speed_x,
+            carstate.speed_y,
+            carstate.angle,
+            carstate.gear,
+            carstate.rpm,
+            *carstate.wheel_velocities,
+            *carstate.distances_from_edge,
+            command.gear,
+            command.steering,
             command.accelerator,
             command.brake,
-            command.steering,
-            carstate.speed_x,
-            carstate.distance_from_center,
-            carstate.angle,
-            *carstate.distances_from_edge,
         ])
 
         # write to file
-        self.writer.writerow(data)
-        self.f.flush()
+        # self.writer.writerow(data)
+        # self.f.flush()
 
         return command
 

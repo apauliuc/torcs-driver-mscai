@@ -26,4 +26,5 @@ torcs-1.3.7-patched
 .vscode/
 
 data/csv
-bot_data.csv
+neural_networks/echo_state/parameter_files
+client/parameters/previous_params
