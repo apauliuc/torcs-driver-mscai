@@ -111,7 +111,7 @@ class MyDriver(Driver):
         # X = np.concatenate((X, wheelSpin, distFromEdge))
 
         X = torch.from_numpy(X).float()
-        params = Variable(X.view(-1, 1, 28))
+        params = Variable(X.view(1, -1))
         output = self.neural_net(params)
 
         results = output.resize(3).data.numpy()

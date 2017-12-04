@@ -59,7 +59,7 @@ if __name__ == '__main__':
     project_dir = os.path.split(os.path.split(script_dir)[0])[0]
 
     # driver = 'default_driver'
-    # train_data_path = os.path.join(project_dir, '/data/csv/{}/*.csv'.format(driver))
+    # train_data_path = os.path.join(project_dir, 'data/csv/{}'.format(driver))
     train_data_path = os.path.join(project_dir, 'data/csv')
 
     training_files = glob.glob(train_data_path + '/*.csv')

@@ -16,15 +16,14 @@ def save_obj(obj, name):
         pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
 
 
-dtype = torch.cuda.FloatTensor
-continue_train = True
+continue_train = False
 
 if __name__ == '__main__':
     script_dir = os.path.dirname(__file__)
     project_dir = os.path.split(os.path.split(script_dir)[0])[0]
 
     # driver = 'default_driver'
-    # train_data_path = os.path.join(project_dir, '/data/csv/{}/*.csv'.format(driver))
+    # train_data_path = os.path.join(project_dir, 'data/csv/{}'.format(driver))
     train_data_path = os.path.join(project_dir, 'data/csv')
 
     training_files = glob.glob(train_data_path + '/*.csv')
@@ -53,10 +52,8 @@ if __name__ == '__main__':
     if continue_train:
         lstm_nn.load_state_dict(torch.load('weight_params.pt'))
 
-    lstm_nn.cuda()
-
     # Same learning rate
-    criterion = nn.MSELoss().cuda()
+    criterion = nn.MSELoss()
     optimizer = torch.optim.Adam(lstm_nn.parameters(), lr=LEARNING_RATE)
 
     for epoch in np.arange(NUM_EPOCHS):
@@ -70,8 +67,8 @@ if __name__ == '__main__':
                 if len(X) != BATCH_SIZE:
                     continue
 
-                data = Variable(X.view(-1, 1, INPUT_SIZE)).type(dtype)
-                target = Variable(y).type(dtype)
+                data = Variable(X.view(-1, 1, INPUT_SIZE))
+                target = Variable(y)
 
                 optimizer.zero_grad()
                 prediction = lstm_nn(data)
