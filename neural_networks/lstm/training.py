@@ -16,7 +16,8 @@ def save_obj(obj, name):
         pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
 
 
-continue_train = False
+dtype = torch.cuda.FloatTensor
+continue_train = True
 
 if __name__ == '__main__':
     script_dir = os.path.dirname(__file__)
@@ -32,7 +33,7 @@ if __name__ == '__main__':
 
     params = {
         'input': 22,
-        'hidden': 100,
+        'hidden': 50,
         'output': 3,
         'layers': 3
     }
@@ -45,15 +46,17 @@ if __name__ == '__main__':
     NUM_LAYERS = params['layers']
     BATCH_SIZE = 100
     NUM_EPOCHS = 20
-    LEARNING_RATE = 0.0001
+    LEARNING_RATE = 0.00001
 
     lstm_nn = LSTM(INPUT_SIZE, HIDDEN_SIZE, NUM_LAYERS, OUTPUT_SIZE, BATCH_SIZE)
 
     if continue_train:
         lstm_nn.load_state_dict(torch.load('weight_params.pt'))
 
+    lstm_nn.cuda()
+
     # Same learning rate
-    criterion = nn.MSELoss()
+    criterion = nn.MSELoss().cuda()
     optimizer = torch.optim.Adam(lstm_nn.parameters(), lr=LEARNING_RATE)
 
     for epoch in np.arange(NUM_EPOCHS):
@@ -67,8 +70,8 @@ if __name__ == '__main__':
                 if len(X) != BATCH_SIZE:
                     continue
 
-                data = Variable(X.view(-1, 1, INPUT_SIZE))
-                target = Variable(y)
+                data = Variable(X.view(-1, 1, INPUT_SIZE)).type(dtype)
+                target = Variable(y).type(dtype)
 
                 optimizer.zero_grad()
                 prediction = lstm_nn(data)
@@ -86,4 +89,5 @@ if __name__ == '__main__':
 
     print('Training done')
 
+    lstm_nn.cpu()
     torch.save(lstm_nn.state_dict(), 'weight_params.pt')

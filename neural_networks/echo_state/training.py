@@ -69,10 +69,10 @@ if __name__ == '__main__':
     params = {
         'n_input': X.shape[1],
         'n_output': y.shape[1],
-        'n_reservoir': 250,
-        'spectral_radius': 0.9,
-        'leaking_rate': 0.7,
-        'reservoir_density': 0.1,
+        'n_reservoir': 80,
+        'spectral_radius': 0.74,
+        'leaking_rate': 0.85,
+        'reservoir_density': 0.2,
         'feedback': True,
     }
 

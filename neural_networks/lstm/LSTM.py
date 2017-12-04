@@ -9,6 +9,8 @@ import torch
 import torch.nn as nn
 from torch.autograd import Variable
 
+dtype = torch.cuda.FloatTensor
+
 
 class LSTM(nn.Module):
     def __init__(self, input_size, hidden_size, num_layers, output_size, batch_size):
@@ -28,8 +30,8 @@ class LSTM(nn.Module):
 
     def init_hidden(self, x=None):
         if x is None:
-            return (Variable(torch.zeros(self.num_layers, 1, self.hidden_size)),
-                    Variable(torch.zeros(self.num_layers, 1, self.hidden_size)))
+            return (Variable(torch.zeros(self.num_layers, 1, self.hidden_size)).type(dtype),
+                    Variable(torch.zeros(self.num_layers, 1, self.hidden_size)).type(dtype))
         else:
             return Variable(x[0].data), Variable(x[1].data)
 

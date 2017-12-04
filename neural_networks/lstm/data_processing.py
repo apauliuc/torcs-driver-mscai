@@ -47,7 +47,7 @@ def load_training_data(training_files, normalization=True):
         X[:, 0] = normalize(X[:, 0], -85, 360)  # speed
         X[:, 1] = normalize(X[:, 1], -1, 1)  # track position
         X[:, 2] = normalize(X[:, 2], -180, 180)  # angle
-        for i in np.arange(3, 23):
+        for i in np.arange(3, 22):
             X[:, i] = normalize(X[:, i], 0, 200)
 
         y[:, 0] = normalize(y[:, 0], 0, 1)  # acceleration

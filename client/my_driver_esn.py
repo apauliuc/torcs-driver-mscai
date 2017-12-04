@@ -26,7 +26,7 @@ class MyDriver(Driver):
     def __init__(self, logdata=True):
         super().__init__(logdata)
 
-        no = ''
+        no = '1079'
 
         self.net_p = load_obj('esn_parameters_' + no)
 
@@ -110,19 +110,21 @@ class MyDriver(Driver):
         acc = self.normalize(acc, -1, 1)
         brake = self.normalize(brake, -1, 1)
 
+        print('{} - {}'.format(acc, brake))
         # print(acc)
         # print(brake)
         # print(steer)
 
+        command.brake = brake
+        command.accelerator = acc
+
         if acc > 0:
-            command.brake = 0
-            command.accelerator = acc
+            # command.accelerator = acc
 
             if carstate.rpm > 8000:
                 command.gear = carstate.gear + 1
         else:
-            command.brake = brake
-            command.accelerator = 0
+            # command.accelerator = 0
 
             if carstate.rpm < 2500:
                 command.gear = carstate.gear - 1

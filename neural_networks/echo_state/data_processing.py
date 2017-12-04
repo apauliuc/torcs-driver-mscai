@@ -53,9 +53,12 @@ def load_training_data(training_files, normalization=True):
         for i in np.arange(3, 22):
             X_train[:, i] = scale_array(X_full[:, i], 0, 200)
 
+        # acc_brake = y_full[:, 0] - y_full[:, 1]
+        # y_train[:, 0] = scale_array(acc_brake, -1, 1, -1, 1)
         y_train[:, 0] = scale_array(y_full[:, 0], 0, 1, -1, 1)
         y_train[:, 1] = scale_array(y_full[:, 1], 0, 1, -1, 1)
         y_train[:, 2] = scale_array(y_full[:, 2], y_full[:, 2].min(), y_full[:, 2].max())
+        # y_train = np.delete(y_train, 2, axis=1)
     else:
         X_train = X_full
         y_train = y_full
