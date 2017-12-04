@@ -26,7 +26,7 @@ class MyDriver(Driver):
     def __init__(self, logdata=True):
         super().__init__(logdata)
 
-        no = '553'
+        no = ''
 
         self.net_p = load_obj('esn_parameters_' + no)
 
@@ -50,7 +50,7 @@ class MyDriver(Driver):
         self.esn.WFeedback = weights['WFeedback']
         self.esn.WOut = weights['WOut']
 
-        self.params_dict = load_obj('norm_parameters')
+        # self.params_dict = load_obj('norm_parameters')
 
         self.prev_input = False
 
@@ -67,17 +67,27 @@ class MyDriver(Driver):
 
     def drive(self, carstate: State) -> Command:
         X = np.array([
-            self.scale_array(carstate.speed_x, self.params_dict['minSpeedX'], self.params_dict['maxSpeedX']),
-            self.scale_array(carstate.speed_y, self.params_dict['minSpeedY'], self.params_dict['maxSpeedY']),
-            self.scale_array(carstate.angle, -math.pi, math.pi),
-            self.scale_array(carstate.gear, -1, 6),
-            self.scale_array(carstate.rpm, 0, self.params_dict['maxRPM'])
+            self.scale_array(carstate.speed_x, -85, 360),
+            self.scale_array(carstate.distance_from_center, -1, 1),
+            self.scale_array(carstate.angle, -180, 180)
         ])
-        wheelSpin = [self.scale_array(i, 0, self.params_dict['maxWheelSpin'])
-                     for i in list(carstate.wheel_velocities)]
-
         distFromEdge = [self.scale_array(i, 0, 200)
                         for i in list(carstate.distances_from_edge)]
+
+        X = np.concatenate((X, distFromEdge))
+
+        # X = np.array([
+        #     self.scale_array(carstate.speed_x, self.params_dict['minSpeedX'], self.params_dict['maxSpeedX']),
+        #     self.scale_array(carstate.speed_y, self.params_dict['minSpeedY'], self.params_dict['maxSpeedY']),
+        #     self.scale_array(carstate.angle, -math.pi, math.pi),
+        #     self.scale_array(carstate.gear, -1, 6),
+        #     self.scale_array(carstate.rpm, 0, self.params_dict['maxRPM'])
+        # ])
+        # wheelSpin = [self.scale_array(i, 0, self.params_dict['maxWheelSpin'])
+        #              for i in list(carstate.wheel_velocities)]
+        #
+        # distFromEdge = [self.scale_array(i, 0, 200)
+        #                 for i in list(carstate.distances_from_edge)]
 
         # X = np.array([
         #     carstate.speed_x,
@@ -88,16 +98,14 @@ class MyDriver(Driver):
         # ])
         # wheelSpin = [i for i in list(carstate.wheel_velocities)]
         # distFromEdge = [i for i in list(carstate.distances_from_edge)]
-
-        X = np.concatenate((X, wheelSpin, distFromEdge))
+        #
+        # X = np.concatenate((X, wheelSpin, distFromEdge))
 
         results = self.esn.predict(X, self.prev_input).reshape(self.net_p['n_output'])
 
-        steer, acc, brake = results
+        acc, brake, steer = results
 
         command = Command()
-
-        print(acc)
 
         acc = self.normalize(acc, -1, 1)
         brake = self.normalize(brake, -1, 1)
@@ -123,7 +131,7 @@ class MyDriver(Driver):
             command.gear = carstate.gear or 1
 
         # print(steer)
-        command.steering = np.clip(steer, -1, 1)
+        command.steering = steer
 
         self.prev_input = True
 

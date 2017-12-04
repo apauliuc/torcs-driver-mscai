@@ -3,13 +3,20 @@ from neural_networks.lstm.data_processing import load_training_data
 import glob
 import os
 import numpy as np
+import pickle
 
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
 from torch.autograd import Variable
 
-continue_train = True
+
+def save_obj(obj, name):
+    with open(name + '.pkl', 'wb') as f:
+        pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
+
+
+continue_train = False
 
 if __name__ == '__main__':
     script_dir = os.path.dirname(__file__)
@@ -19,21 +26,31 @@ if __name__ == '__main__':
     # train_data_path = os.path.join(project_dir, '/data/csv/{}/*.csv'.format(driver))
     train_data_path = os.path.join(project_dir, 'data/csv')
 
-    training_files = glob.glob(train_data_path + '/bot*.csv')
+    training_files = glob.glob(train_data_path + '/*.csv')
 
     training_sets = load_training_data(training_files)
 
-    INPUT_SIZE = 28
-    HIDDEN_SIZE = 56
-    NUM_LAYERS = 3
-    BATCH_SIZE = 100
-    NUM_EPOCHS = 10
-    LEARNING_RATE = 0.00001
+    params = {
+        'input': 22,
+        'hidden': 100,
+        'output': 3,
+        'layers': 3
+    }
 
-    lstm_nn = LSTM(INPUT_SIZE, HIDDEN_SIZE, NUM_LAYERS, 3, BATCH_SIZE)
+    save_obj(params, 'rnn_params')
+
+    INPUT_SIZE = params['input']
+    HIDDEN_SIZE = params['hidden']
+    OUTPUT_SIZE = params['output']
+    NUM_LAYERS = params['layers']
+    BATCH_SIZE = 100
+    NUM_EPOCHS = 20
+    LEARNING_RATE = 0.0001
+
+    lstm_nn = LSTM(INPUT_SIZE, HIDDEN_SIZE, NUM_LAYERS, OUTPUT_SIZE, BATCH_SIZE)
 
     if continue_train:
-        lstm_nn.load_state_dict(torch.load('rnn_params.pt'))
+        lstm_nn.load_state_dict(torch.load('weight_params.pt'))
 
     # Same learning rate
     criterion = nn.MSELoss()
@@ -69,4 +86,4 @@ if __name__ == '__main__':
 
     print('Training done')
 
-    torch.save(lstm_nn.state_dict(), 'rnn_params.pt')
+    torch.save(lstm_nn.state_dict(), 'weight_params.pt')

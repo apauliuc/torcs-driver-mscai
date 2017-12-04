@@ -4,6 +4,7 @@ import numpy as np
 import pickle
 import glob
 import os
+import pandas as pd
 
 err = 0.0
 
@@ -61,17 +62,17 @@ if __name__ == '__main__':
     # train_data_path = os.path.join(project_dir, '/data/csv/{}/*.csv'.format(driver))
     train_data_path = os.path.join(project_dir, 'data/csv')
 
-    training_files = glob.glob(train_data_path + '/bot*.csv')
+    training_files = glob.glob(train_data_path + '/*.csv')
 
     X, y = load_training_data(training_files)
 
     params = {
-        'n_input': 28,
-        'n_output': 3,
-        'n_reservoir': 90,
-        'spectral_radius': 0.85,
-        'leaking_rate': 0.5,
-        'reservoir_density': 0.8,
+        'n_input': X.shape[1],
+        'n_output': y.shape[1],
+        'n_reservoir': 250,
+        'spectral_radius': 0.9,
+        'leaking_rate': 0.7,
+        'reservoir_density': 0.1,
         'feedback': True,
     }
 

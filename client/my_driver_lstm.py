@@ -50,10 +50,18 @@ class MyDriver(Driver):
     def __init__(self, logdata=True):
         super().__init__(logdata)
 
-        self.neural_net = LSTM(28, 56, 3, 3)
-        self.neural_net.load_state_dict(torch.load('parameters/rnn_params.pt'))
+        params = load_obj('rnn_params')
 
-        self.params_dict = load_obj('norm_parameters')
+        self.neural_net = LSTM(
+            params['input'],
+            params['hidden'],
+            params['layers'],
+            params['output']
+        )
+        self.neural_net.load_state_dict(torch.load('parameters/weight_params.pt'))
+        self.neural_net.init_hidden()
+
+        # self.params_dict = load_obj('norm_parameters')
 
     def normalize(self, x, mmin, mmax):
         return np.clip((x - mmin) / (mmax - mmin), 0, 1)
@@ -68,17 +76,27 @@ class MyDriver(Driver):
 
     def drive(self, carstate: State) -> Command:
         X = np.array([
-            self.scale_array(carstate.speed_x, self.params_dict['minSpeedX'], self.params_dict['maxSpeedX']),
-            self.scale_array(carstate.speed_y, self.params_dict['minSpeedY'], self.params_dict['maxSpeedY']),
-            self.scale_array(carstate.angle, -math.pi, math.pi),
-            self.scale_array(carstate.gear, -1, 6),
-            self.scale_array(carstate.rpm, 0, self.params_dict['maxRPM'])
+            self.scale_array(carstate.speed_x, -85, 360),
+            self.scale_array(carstate.distance_from_center, -1, 1),
+            self.scale_array(carstate.angle, -180, 180)
         ])
-        wheelSpin = [self.scale_array(i, 0, self.params_dict['maxWheelSpin'])
-                     for i in list(carstate.wheel_velocities)]
-
         distFromEdge = [self.scale_array(i, 0, 200)
                         for i in list(carstate.distances_from_edge)]
+
+        X = np.concatenate((X, distFromEdge))
+
+        # X = np.array([
+        #     self.scale_array(carstate.speed_x, self.params_dict['minSpeedX'], self.params_dict['maxSpeedX']),
+        #     self.scale_array(carstate.speed_y, self.params_dict['minSpeedY'], self.params_dict['maxSpeedY']),
+        #     self.scale_array(carstate.angle, -math.pi, math.pi),
+        #     self.scale_array(carstate.gear, -1, 6),
+        #     self.scale_array(carstate.rpm, 0, self.params_dict['maxRPM'])
+        # ])
+        # wheelSpin = [self.scale_array(i, 0, self.params_dict['maxWheelSpin'])
+        #              for i in list(carstate.wheel_velocities)]
+        #
+        # distFromEdge = [self.scale_array(i, 0, 200)
+        #                 for i in list(carstate.distances_from_edge)]
 
         # X = np.array([
         #     carstate.speed_x,
@@ -92,21 +110,17 @@ class MyDriver(Driver):
         #
         # X = np.concatenate((X, wheelSpin, distFromEdge))
 
-        X = np.concatenate((X, wheelSpin, distFromEdge))
-
         X = torch.from_numpy(X).float()
         params = Variable(X.view(-1, 1, 28))
         output = self.neural_net(params)
 
         results = output.resize(3).data.numpy()
-        steer = results[0]
-        acc = results[1]
-        brake = results[2]
+        acc, brake, steer = results
 
         command = Command()
 
-        acc = self.normalize(acc, -1, 1)
-        brake = self.normalize(brake, -1, 1)
+        acc = self.normalize(acc, 0, 1)
+        brake = self.normalize(brake, 0, 1)
 
         if acc > 0:
             command.brake = 0
