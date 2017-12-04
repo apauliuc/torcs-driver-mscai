@@ -50,9 +50,9 @@ def load_training_data(training_files, normalization=True):
         for i in np.arange(3, 22):
             X[:, i] = normalize(X[:, i], 0, 200)
 
-        y[:, 0] = normalize(y[:, 0], 0, 1)  # acceleration
-        y[:, 1] = normalize(y[:, 1], 0, 1)  # brake
-        y[:, 2] = normalize(y[:, 2], y[:, 2].min(), y[:, 2].max())
+        # y[:, 0] = normalize(y[:, 0], 0, 1)  # acceleration
+        # y[:, 1] = normalize(y[:, 1], 0, 1)  # brake
+        # y[:, 2] = normalize(y[:, 2], y[:, 2].min(), y[:, 2].max())
 
         # Create TensorDataset from FloatTensors and save to dictionary
         X_train = torch.from_numpy(X).float()

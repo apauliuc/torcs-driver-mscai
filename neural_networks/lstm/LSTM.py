@@ -30,8 +30,8 @@ class LSTM(nn.Module):
 
     def init_hidden(self, x=None):
         if x is None:
-            return (Variable(torch.zeros(self.num_layers, 1, self.hidden_size)).type(dtype),
-                    Variable(torch.zeros(self.num_layers, 1, self.hidden_size)).type(dtype))
+            return (Variable(torch.zeros(self.num_layers, self.batch_size, self.hidden_size)).type(dtype),
+                    Variable(torch.zeros(self.num_layers, self.batch_size, self.hidden_size)).type(dtype))
         else:
             return Variable(x[0].data), Variable(x[1].data)
 

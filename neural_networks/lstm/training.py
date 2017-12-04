@@ -17,7 +17,7 @@ def save_obj(obj, name):
 
 
 dtype = torch.cuda.FloatTensor
-continue_train = True
+continue_train = False
 
 if __name__ == '__main__':
     script_dir = os.path.dirname(__file__)
@@ -44,8 +44,8 @@ if __name__ == '__main__':
     HIDDEN_SIZE = params['hidden']
     OUTPUT_SIZE = params['output']
     NUM_LAYERS = params['layers']
-    BATCH_SIZE = 100
-    NUM_EPOCHS = 20
+    BATCH_SIZE = 1
+    NUM_EPOCHS = 100
     LEARNING_RATE = 0.00001
 
     lstm_nn = LSTM(INPUT_SIZE, HIDDEN_SIZE, NUM_LAYERS, OUTPUT_SIZE, BATCH_SIZE)
@@ -81,9 +81,9 @@ if __name__ == '__main__':
 
                 epoch_error += loss.data[0]
 
-                if (i + 1) % BATCH_SIZE == 0:
-                    print('    step: [%d/%d], loss: %.4f'
-                          % (i + 1, len(training_sets[f].target_tensor) // BATCH_SIZE, loss.data[0]))
+                # if (i + 1) % BATCH_SIZE == 0:
+                #     print('    step: [%d/%d], loss: %.4f'
+                #           % (i + 1, len(training_sets[f].target_tensor) // BATCH_SIZE, loss.data[0]))
 
         print('Epoch error: {}\n'.format(epoch_error))
 
