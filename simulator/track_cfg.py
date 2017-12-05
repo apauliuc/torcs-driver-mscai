@@ -24,8 +24,7 @@ def main():
         {'name': 'd-speedway', 'category': 'oval'},
         {'name': 'e-track-5', 'category': 'oval'},
         {'name': 'michigan', 'category': 'oval'},
-        {'name': 'b-speedway', 'category': 'oval'},
-
+        {'name': 'b-speedway', 'category': 'oval'}
     ]
 
     track = tracks[int(sys.argv[1])]

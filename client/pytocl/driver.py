@@ -6,9 +6,11 @@ from pytocl.analysis import DataLogWriter
 from pytocl.car import State, Command, MPS_PER_KMH
 from pytocl.controller import CompositeController, ProportionalController, \
     IntegrationController, DerivativeController
+
 import csv
 import numpy as np
-import os
+from random import choice
+from string import ascii_uppercase
 
 _logger = logging.getLogger(__name__)
 
@@ -24,15 +26,15 @@ class Driver:
     """
 
     def __init__(self, logdata=True):
-        self.f = open('data/csv/default_driver/data.csv', 'a+', encoding='UTF-8')
+        file_path = 'data/csv/default_driver/race_{}.csv'.format(''.join(choice(ascii_uppercase) for i in range(4)))
+        self.f = open(file_path, 'a+', encoding='UTF-8')
         self.writer = csv.writer(self.f)
-        # if self.f.read() == '':
-        #     headers = 'ACCELERATION,BRAKE,STEERING,SPEED,TRACK_POSITION,ANGLE_TO_TRACK_AXIS,' \
-        #               'TRACK_EDGE_0,TRACK_EDGE_1,TRACK_EDGE_2,TRACK_EDGE_3,TRACK_EDGE_4,TRACK_EDGE_5,' \
-        #               'TRACK_EDGE_6,TRACK_EDGE_7,TRACK_EDGE_8,TRACK_EDGE_9,TRACK_EDGE_10,TRACK_EDGE_11,' \
-        #               'TRACK_EDGE_12,TRACK_EDGE_13,TRACK_EDGE_14,TRACK_EDGE_15,TRACK_EDGE_16,' \
-        #               'TRACK_EDGE_17,TRACK_EDGE_18'.split(',')
-        #     self.writer.writerow(headers)
+        headers = 'ACCELERATION,BRAKE,STEERING,SPEED,TRACK_POSITION,ANGLE_TO_TRACK_AXIS,' \
+                  'TRACK_EDGE_0,TRACK_EDGE_1,TRACK_EDGE_2,TRACK_EDGE_3,TRACK_EDGE_4,TRACK_EDGE_5,' \
+                  'TRACK_EDGE_6,TRACK_EDGE_7,TRACK_EDGE_8,TRACK_EDGE_9,TRACK_EDGE_10,TRACK_EDGE_11,' \
+                  'TRACK_EDGE_12,TRACK_EDGE_13,TRACK_EDGE_14,TRACK_EDGE_15,TRACK_EDGE_16,' \
+                  'TRACK_EDGE_17,TRACK_EDGE_18'.split(',')
+        self.writer.writerow(headers)
 
         self.steering_ctrl = CompositeController(
             ProportionalController(0.4),
