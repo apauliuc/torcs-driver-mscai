@@ -1,7 +1,10 @@
 from neural_networks.echo_state.data_processing import load_training_data
+from neural_networks.echo_state.ESN import ESN
 import numpy as np
 import pickle
-from neural_networks.echo_state.ESN import ESN
+import glob
+import os
+import pandas as pd
 
 err = 0.0
 
@@ -15,8 +18,13 @@ def safe_arctanh(x):
     return np.arctanh(x)
 
 
-def save_obj(obj, name):
+def save_obj_err(obj, name):
     with open('parameter_files/' + name + '_%.0f.pkl' % (err * 10000), 'wb') as f:
+        pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
+
+
+def save_obj(obj, name):
+    with open(save_path + name + '.pkl', 'wb') as f:
         pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
 
 
@@ -49,22 +57,29 @@ def train_net(parameters, X_train, y_train, save=True):
         save_obj(parameters, 'esn_parameters')
         save_obj(weights_dict, 'esn_weights')
         save_obj(esn.random_state_, 'esn_random_state')
-        # save_obj(param_dict, 'norm_parameters')
 
 
 if __name__ == '__main__':
-    X, y, param_dict = load_training_data('train_data')
+    script_dir = os.path.dirname(__file__)
+    project_dir = os.path.split(os.path.split(script_dir)[0])[0]
+
+    # driver = 'default_driver'
+    # train_data_path = os.path.join(project_dir, 'data/csv/{}'.format(driver))
+    train_data_path = os.path.join(project_dir, 'data/csv')
+    training_files = glob.glob(train_data_path + '/*.csv')
+
+    save_path = os.path.join(project_dir, 'client/parameters/')
+
+    X, y = load_training_data(training_files)
 
     params = {
-        'n_input': 28,
-        'n_output': 3,
-        'n_reservoir': 75,
-        'spectral_radius': 0.9,
-        'leaking_rate': 0.75,
-        'reservoir_density': 0.8,
+        'n_input': X.shape[1],
+        'n_output': y.shape[1],
+        'n_reservoir': 250,
+        'spectral_radius': 0.8,
+        'leaking_rate': 0.9,
+        'reservoir_density': 0.1,
         'feedback': True,
     }
 
     train_net(params, X, y, save=True)
-
-

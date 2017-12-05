@@ -27,26 +27,27 @@ class ESN(object):
         self._create_reservoir()
 
     def _create_reservoir(self):
-        # matrix with values [-0.5, 0.5]
+        # weight matrix with values [-0.5, 0.5]
         self.W = self.random_state_.rand(self.n_reservoir, self.n_reservoir) - 0.5
 
-        # make weight matrix sparse
+        # make weight matrix sparse based on reservoir density
         if self._reservoir_density is not None:
             mask = self.random_state_.rand(*self.W.shape) > self._reservoir_density
             self.W[mask] *= 0.0
 
-        # rescale weight matrix
+        # rescale weight matrix to wanted spectral radius
         if self._spectral_radius is not None:
             radius = np.max(np.abs(np.linalg.eigvals(self.W)))
             self.W = self.W * (self._spectral_radius / radius)
 
-        # input weight matrix
+        # random input weight matrix
         self.WInput = self.random_state_.rand(self.n_reservoir, 1 + self.n_input) - 0.5
 
-        # feedback weight matrix
+        # random feedback weight matrix
         self.WFeedback = self.random_state_.rand(self.n_reservoir, 1 + self.n_output) - 0.5
 
     def _update(self, state, in_data, out_data):
+        # feed the output into preactivation if feedback is set to True
         if self._feedback:
             preactiv = (np.dot(self.W, state) +
                         np.dot(self.WInput, in_data) +
@@ -55,17 +56,21 @@ class ESN(object):
             preactiv = (np.dot(self.W, state) +
                         np.dot(self.WInput, in_data))
 
+        # leaking rate specifies how much previous state influences the output
         return (1 - self._leaking_rate) * state + self._leaking_rate * self.out_activation(preactiv)
 
     def fit(self, X, y):
+        # reshape data if not 2dim
         if X.ndim < 2:
             X = np.reshape(X, (len(X), -1))
         if y.ndim < 2:
             y = np.reshape(y, (len(y), -1))
 
+        # compute the states matrix
         if not self._silent:
             print("computing states...")
 
+        # washout time to not feed the output into the computation for first few inputs
         washout_t = min(int(X.shape[0] / 10), 100)
         self._feedback = False
 
@@ -78,14 +83,20 @@ class ESN(object):
                                         np.hstack((1, X[i, :])),
                                         np.hstack((1, y[i - 1, :])))
 
+        # time to fit the output to the weight matrix
         if not self._silent:
             print("fitting...")
 
+        # create M matrix
         M = np.hstack((states[washout_t:, :], X[washout_t:, :], y[washout_t - 1:-1, :]))
+        # invert M
         M_inv = np.linalg.pinv(M)
+        # create T matrix
         T_matrix = self.inverse_out_activation(y[washout_t:, :])
+        # compute W out
         self.WOut = np.dot(M_inv, T_matrix).T
 
+        # get ESN performance indicator based on training data and the newly computed WOut matrix
         M = np.hstack((states, X, y))
         pred_train = self.out_activation(np.dot(M, self.WOut.T))
         pred_err = np.sqrt(np.mean((pred_train - y) ** 2))
@@ -96,18 +107,22 @@ class ESN(object):
         return pred_err
 
     def predict(self, inputs, continuation_train=False):
+        # reshape data
         if inputs.ndim < 2:
             inputs = np.reshape(inputs, (1, -1))
         n_samples = inputs.shape[0]
 
+        # check for previous input, state and output, otherwise 0
         last_input = self.last_input if continuation_train else np.zeros(self.n_input).reshape(1, -1)
         last_state = self.last_state if continuation_train else np.zeros(self.n_reservoir)
         last_output = self.last_output if continuation_train else np.zeros(self.n_output)
 
+        # matrices with first row for previous data and second for the new, to be computed, data
         inputs = np.vstack([last_input, inputs])
         states = np.vstack([last_state, np.zeros((n_samples, self.n_reservoir))])
         outputs = np.vstack([last_output, np.zeros((n_samples, self.n_output))])
 
+        # for each row in input, compute the new state and its output
         for i in range(n_samples):
             states[i + 1, :] = self._update(states[i, :],
                                             np.hstack((1, inputs[i + 1, :])),
@@ -116,6 +131,7 @@ class ESN(object):
                 np.dot(self.WOut, np.concatenate([states[i + 1, :], inputs[i + 1, :], outputs[i, :]]))
             )
 
+        # remember last input state and output
         self.last_input = inputs[-1, :]
         self.last_state = states[-1, :]
         self.last_output = outputs[-1, :]
