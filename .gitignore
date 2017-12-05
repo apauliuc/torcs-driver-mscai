@@ -18,12 +18,12 @@ torcs-1.3.7-patched
 # dunno what this is
 .directory
 
-
 ### macOS ###
 *.DS_Store
 .AppleDouble
 .LSOverride
 .vscode/
+from cuda/
 
 data/csv
 neural_networks/echo_state/parameter_files
