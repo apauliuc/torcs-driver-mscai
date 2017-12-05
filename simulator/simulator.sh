@@ -2,7 +2,7 @@
 
 counter=1
 
-while [ ${counter} -le 20 ]
+while [ ${counter} -le 9 ]
 do
   python ./simulator/track_cfg.py ${counter}
   torcs -r /home/andrei/Code/torcs-driver-mscai/simulator/quickrace.xml &

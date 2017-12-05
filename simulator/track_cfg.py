@@ -10,21 +10,20 @@ def main():
         {'name': 'g-track-2', 'category': 'road'},
         {'name': 'ole-road-1', 'category': 'road'},
         {'name': 'ruudskogen', 'category': 'road'},
-        {'name': 'spring', 'category': 'road'},
         {'name': 'wheel-1', 'category': 'road'},
         {'name': 'aalborg', 'category': 'road'},
         {'name': 'alpine-1', 'category': 'road'},
         {'name': 'e-track-2', 'category': 'road'},
-        {'name': 'dirt-1', 'category': 'dirt'},
-        {'name': 'dirt-2', 'category': 'dirt'},
-        {'name': 'dirt-4', 'category': 'dirt'},
-        {'name': 'dirt-6', 'category': 'dirt'},
-        {'name': 'mixed-2', 'category': 'dirt'},
-        {'name': 'a-speedway', 'category': 'oval'},
-        {'name': 'd-speedway', 'category': 'oval'},
-        {'name': 'e-track-5', 'category': 'oval'},
-        {'name': 'michigan', 'category': 'oval'},
-        {'name': 'b-speedway', 'category': 'oval'}
+        # {'name': 'dirt-1', 'category': 'dirt'},
+        # {'name': 'dirt-2', 'category': 'dirt'},
+        # {'name': 'dirt-4', 'category': 'dirt'},
+        # {'name': 'dirt-6', 'category': 'dirt'},
+        # {'name': 'mixed-2', 'category': 'dirt'},
+        # {'name': 'a-speedway', 'category': 'oval'},
+        # {'name': 'd-speedway', 'category': 'oval'},
+        # {'name': 'e-track-5', 'category': 'oval'},
+        # {'name': 'michigan', 'category': 'oval'},
+        # {'name': 'b-speedway', 'category': 'oval'}
     ]
 
     track = tracks[int(sys.argv[1])]
