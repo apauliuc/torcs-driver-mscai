@@ -56,74 +56,65 @@ class MyDriver(Driver):
 
         # self.params_dict = load_obj('norm_parameters')
 
+        self.means = load_obj('means')
+        self.stdevs = load_obj('stdevs')
+
         self.prev_input = False
 
-    def normalize(self, x, mmin, mmax):
+    def normalize(self, x, mean, std):
+        return (x - mean) / std
+
+    def normalize_to_0_1(self, x, mmin, mmax):
         return np.clip((x - mmin) / (mmax - mmin), 0, 1)
 
-    def invert_normalize(self, x, mmin, mmax):
-        x = np.clip(x, -1, 1)
-        return x * (mmax - mmin) + mmin
+    # def invert_normalize(self, x, mmin, mmax):
+    #     x = np.clip(x, -1, 1)
+    #     return x * (mmax - mmin) + mmin
 
     def scale_array(self, x, mmin=0, mmax=1, new_min=-1, new_max=1):
-        x = self.normalize(x, mmin, mmax)
+        x = self.normalize_to_0_1(x, mmin, mmax)
         return np.clip(x * (new_max - new_min) + new_min, new_min, new_max)
 
     def drive(self, carstate: State) -> Command:
-        X = np.array([
-            self.scale_array(carstate.speed_x, -85, 360),
-            self.scale_array(carstate.distance_from_center, -1, 1),
-            self.scale_array(carstate.angle, -180, 180)
-        ])
-        distFromEdge = [self.scale_array(i, 0, 200)
-                        for i in list(carstate.distances_from_edge)]
-
-        X = np.concatenate((X, distFromEdge))
-
         # X = np.array([
-        #     self.scale_array(carstate.speed_x, self.params_dict['minSpeedX'], self.params_dict['maxSpeedX']),
-        #     self.scale_array(carstate.speed_y, self.params_dict['minSpeedY'], self.params_dict['maxSpeedY']),
-        #     self.scale_array(carstate.angle, -math.pi, math.pi),
-        #     self.scale_array(carstate.gear, -1, 6),
-        #     self.scale_array(carstate.rpm, 0, self.params_dict['maxRPM'])
+        #     self.scale_array(carstate.speed_x, -85, 360),
+        #     self.scale_array(carstate.distance_from_center, -1, 1),
+        #     self.scale_array(carstate.angle, -180, 180)
         # ])
-        # wheelSpin = [self.scale_array(i, 0, self.params_dict['maxWheelSpin'])
-        #              for i in list(carstate.wheel_velocities)]
-        #
         # distFromEdge = [self.scale_array(i, 0, 200)
         #                 for i in list(carstate.distances_from_edge)]
+        # X = np.concatenate((X, distFromEdge))
 
-        # X = np.array([
-        #     carstate.speed_x,
-        #     carstate.speed_y,
-        #     carstate.angle,
-        #     carstate.gear,
-        #     carstate.rpm
-        # ])
-        # wheelSpin = [i for i in list(carstate.wheel_velocities)]
-        # distFromEdge = [i for i in list(carstate.distances_from_edge)]
-        #
-        # X = np.concatenate((X, wheelSpin, distFromEdge))
+        X = np.array([
+            carstate.speed_x,
+            carstate.distance_from_center,
+            carstate.angle
+        ])
+        X = np.concatenate((X, list(carstate.distances_from_edge)))
 
-        results = self.esn.predict(X, self.prev_input).reshape(self.net_p['n_output'])
+        for i in range(len(X)):
+            X[i] = self.normalize(X[i], self.means[i], self.stdevs[i])
 
-        acc, brake, steer = results
+        accelerator, brake, steer = self.esn.predict(X, self.prev_input).reshape(self.net_p['n_output'])
 
         command = Command()
 
-        acc = self.normalize(acc, -1, 1)
-        brake = self.normalize(brake, -1, 1)
+        brake = 0
 
-        print('{} - {}'.format(acc, brake))
-        # print(acc)
-        # print(brake)
-        # print(steer)
+        print('{} - {}'.format(accelerator, brake))
 
-        command.brake = brake
-        command.accelerator = acc
+        if accelerator - brake >= 0:
+            command.brake = 0
+            command.accelerator = (accelerator - brake) * 0.8
+        else:
+            command.brake = brake
+            command.accelerator = accelerator
 
-        if acc > 0:
-            # command.accelerator = acc
+        # command.brake = brake
+        # command.accelerator = accelerator
+
+        if accelerator > 0:
+            # command.accelerator = accelerator
 
             if carstate.rpm > 8000:
                 command.gear = carstate.gear + 1
@@ -134,7 +125,7 @@ class MyDriver(Driver):
                 command.gear = carstate.gear - 1
 
         if not command.gear:
-            command.gear = carstate.gear or 1
+            command.gear = carstate.gear
 
         # print(steer)
         command.steering = steer

@@ -3,8 +3,8 @@
 from pytocl.main import main
 # from client.pytocl.driver import Driver
 
-# from my_driver_esn import MyDriver
-from my_driver_lstm import MyDriver
+from my_driver_esn import MyDriver
+# from my_driver_lstm import MyDriver
 
 if __name__ == '__main__':
     main(MyDriver(logdata=False))

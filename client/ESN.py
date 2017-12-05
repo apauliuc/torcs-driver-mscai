@@ -46,15 +46,15 @@ class ESN(object):
         # random feedback weight matrix
         self.WFeedback = self.random_state_.rand(self.n_reservoir, 1 + self.n_output) - 0.5
 
-    def _update(self, state, in_data, out_data):
+    def _update(self, in_data, state, out_data):
         # feed the output into preactivation if feedback is set to True
         if self._feedback:
-            preactiv = (np.dot(self.W, state) +
-                        np.dot(self.WInput, in_data) +
-                        np.dot(self.WFeedback, self.inverse_out_activation(out_data)))
+            preactiv = (np.dot(self.WInput, in_data) +
+                        np.dot(self.W, state) +
+                        np.dot(self.WFeedback, out_data))
         else:
-            preactiv = (np.dot(self.W, state) +
-                        np.dot(self.WInput, in_data))
+            preactiv = (np.dot(self.WInput, in_data) +
+                        np.dot(self.W, state))
 
         # leaking rate specifies how much previous state influences the output
         return (1 - self._leaking_rate) * state + self._leaking_rate * self.out_activation(preactiv)
@@ -75,13 +75,13 @@ class ESN(object):
         self._feedback = False
 
         states = np.zeros((X.shape[0], self.n_reservoir))
-        for i in np.arange(1, X.shape[0]):
+        for i in np.arange(X.shape[0] - 1):
             if self._feedback is False and i > washout_t:
                 self._feedback = True
 
-            states[i, :] = self._update(states[i - 1, :],
-                                        np.hstack((1, X[i, :])),
-                                        np.hstack((1, y[i - 1, :])))
+            states[i + 1, :] = self._update(np.hstack((1, X[i + 1, :])),
+                                            states[i, :],
+                                            np.hstack((1, y[i, :])))
 
         # time to fit the output to the weight matrix
         if not self._silent:
@@ -124,8 +124,8 @@ class ESN(object):
 
         # for each row in input, compute the new state and its output
         for i in range(n_samples):
-            states[i + 1, :] = self._update(states[i, :],
-                                            np.hstack((1, inputs[i + 1, :])),
+            states[i + 1, :] = self._update(np.hstack((1, inputs[i + 1, :])),
+                                            states[i, :],
                                             np.hstack((1, outputs[i, :])))
             outputs[i + 1, :] = self.out_activation(
                 np.dot(self.WOut, np.concatenate([states[i + 1, :], inputs[i + 1, :], outputs[i, :]]))
