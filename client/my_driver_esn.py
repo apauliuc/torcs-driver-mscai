@@ -108,7 +108,7 @@ class MyDriver(Driver):
             command.accelerator = (accelerator - brake) * 0.8
         else:
             command.brake = brake
-            command.accelerator = accelerator
+            command.accelerator = 0
 
         # command.brake = brake
         # command.accelerator = accelerator

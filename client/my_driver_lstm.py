@@ -16,33 +16,29 @@ def load_obj(name):
         return pickle.load(f)
 
 
-class LSTM(nn.Module):
-    def __init__(self, input_size, hidden_size, num_layers, output_size):
-        self.num_layers = num_layers
+class LSTMDriver(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, output_size, batch_size=0):
+        super(LSTMDriver, self).__init__()
+        self.input_size = input_size
         self.hidden_size = hidden_size
+        self.num_layers = num_layers
+        self.output_size = output_size
+        self.batch_size = batch_size
 
-        super(LSTM, self).__init__()
-        self.lstm = nn.LSTM(
-            input_size=input_size,
-            hidden_size=hidden_size,
-            num_layers=num_layers,
-            batch_first=False
-        )
-        self.out = nn.Linear(hidden_size, output_size)
+        super(LSTMDriver, self).__init__()
+
+        self.lstm = nn.LSTM(input_size=self.input_size, hidden_size=self.hidden_size, num_layers=self.num_layers)
         self.hidden = self.init_hidden()
+        self.linear = nn.Linear(self.hidden_size, self.output_size)
 
-    def init_hidden(self, x=None):
-        if x is None:
-            return (Variable(torch.zeros(self.num_layers, 1, self.hidden_size)),
-                    Variable(torch.zeros(self.num_layers, 1, self.hidden_size)))
-        else:
-            return Variable(x[0].data), Variable(x[1].data)
+    def init_hidden(self):
+        return (Variable(torch.zeros(self.num_layers, 1, self.hidden_size)),
+                Variable(torch.zeros(self.num_layers, 1, self.hidden_size)))
 
     def forward(self, x):
-        lstm_out, hidden_out = self.lstm(x, self.hidden)
-        output = self.out(lstm_out.view(len(x), -1))
-        self.hidden = self.init_hidden(hidden_out)
-        return output
+        lstm_out, self.hidden = self.lstm(x, self.hidden)
+        linear_out = self.linear(lstm_out)
+        return linear_out
 
 
 # noinspection PyPep8Naming,PyMethodMayBeStatic
@@ -51,15 +47,22 @@ class MyDriver(Driver):
     def __init__(self, logdata=True):
         super().__init__(logdata)
 
-        params = load_obj('rnn_params')
+        # params = load_obj('rnn_params')
 
-        self.neural_net = LSTM(
+        params = {
+            'input': 22,
+            'hidden': 22,
+            'layers': 1,
+            'output': 3
+        }
+
+        self.neural_net = LSTMDriver(
             params['input'],
             params['hidden'],
             params['layers'],
             params['output']
         )
-        self.neural_net.load_state_dict(torch.load('parameters/weight_params.pt'))
+        self.neural_net.load_state_dict(torch.load('parameters/weight_parameters.pt'))
         self.neural_net.init_hidden()
 
         # self.params_dict = load_obj('norm_parameters')
@@ -76,15 +79,15 @@ class MyDriver(Driver):
         return np.clip(x * (new_max - new_min) + new_min, new_min, new_max)
 
     def drive(self, carstate: State) -> Command:
-        X = np.array([
-            self.scale_array(carstate.speed_x, -85, 360),
-            self.scale_array(carstate.distance_from_center, -1, 1),
-            self.scale_array(carstate.angle, -180, 180)
-        ])
-        distFromEdge = [self.scale_array(i, 0, 200)
-                        for i in list(carstate.distances_from_edge)]
-
-        X = np.concatenate((X, distFromEdge))
+        # X = np.array([
+        #     self.scale_array(carstate.speed_x, -85, 360),
+        #     self.scale_array(carstate.distance_from_center, -1, 1),
+        #     self.scale_array(carstate.angle, -180, 180)
+        # ])
+        # distFromEdge = [self.scale_array(i, 0, 200)
+        #                 for i in list(carstate.distances_from_edge)]
+        #
+        # X = np.concatenate((X, distFromEdge))
 
         # X = np.array([
         #     self.scale_array(carstate.speed_x, self.params_dict['minSpeedX'], self.params_dict['maxSpeedX']),
@@ -99,68 +102,48 @@ class MyDriver(Driver):
         # distFromEdge = [self.scale_array(i, 0, 200)
         #                 for i in list(carstate.distances_from_edge)]
 
-        # X = np.array([
-        #     carstate.speed_x,
-        #     carstate.speed_y,
-        #     carstate.angle,
-        #     carstate.gear,
-        #     carstate.rpm
-        # ])
-        # wheelSpin = [i for i in list(carstate.wheel_velocities)]
-        # distFromEdge = [i for i in list(carstate.distances_from_edge)]
-        #
-        # X = np.concatenate((X, wheelSpin, distFromEdge))
+        X = np.array([
+            carstate.speed_x,
+            carstate.distance_from_center,
+            carstate.angle
+        ])
+        X = np.concatenate((X, list(carstate.distances_from_edge)))
 
         X = torch.from_numpy(X).float()
         params = Variable(X.view(1, -1))
         output = self.neural_net(params)
 
-        results = output.resize(3).data.numpy()
-        acc, brake, steer = results
+        accelerator, brake, steer = output.resize(3).data.numpy()
 
         command = Command()
 
-        # acc = self.normalize(acc, 0, 1)
-        # brake = self.normalize(brake, 0, 1)
+        command.accelerator = accelerator
+        command.brake = brake
 
-        if acc > 0:
-            command.brake = 0
-            command.accelerator = acc
+        # if accelerator - brake >= 0:
+        #     command.brake = 0
+        #     command.accelerator = 1.5 * (accelerator - brake)
+        # else:
+        #     command.brake = brake
+        #     command.accelerator = 0
+
+        if accelerator > 0:
+            # command.brake = 0
+            # command.accelerator = acc
 
             if carstate.rpm > 8000:
                 command.gear = carstate.gear + 1
         else:
-            command.brake = brake
-            command.accelerator = 0
+            # command.brake = brake
+            # command.accelerator = 0
 
             if carstate.rpm < 2500:
                 command.gear = carstate.gear - 1
 
         if not command.gear:
-            command.gear = carstate.gear or 1
+            command.gear = carstate.gear
 
-        print('{} - {}'.format(steer, self.scale_array(steer, 0, 1)))
-        command.steering = self.scale_array(steer, 0, 1)
-
-        # results = output.resize(2).data.numpy()
-        # # gear = results[0]
-        # steer = results[0]
-        # accel_brake = results[1]
-        #
-        # command = Command()
-        #
-        # accel_brake = min(max(0, accel_brake), 1)
-        # if accel_brake >= 0.5:
-        #     command.brake = 0
-        #     command.accelerator = self.scale_array(accel_brake, 0.5, 1, 0, 1)
-        #
-        #     if carstate.rpm > 8000:
-        #         command.gear = carstate.gear + 1
-        # else:
-        #     command.brake = self.scale_array(accel_brake, 0.0, 0.5, 0, 1)
-        #     command.accelerator = 0
-        #
-        #     if carstate.rpm < 2500 and carstate.gear != 1:
-        #         command.gear = carstate.gear - 1
+        # print('{} - {}'.format(steer, self.scale_array(steer, 0, 1)))
+        command.steering = steer
 
         return command
