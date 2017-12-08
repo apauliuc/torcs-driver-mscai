@@ -283,3 +283,100 @@ DEBUG:root:parse_part from 1 to 1 (to 1 in part parser)
 DEBUG:root:diff equal old[2:2] new[2:2]
 DEBUG:root:diff parser end
 INFO:root:Epoch [1/100]
+INFO:root:Epoch [1/100]
+INFO:root:Epoch [1/100]
+INFO:root:Epoch [1/100]
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- TRAINING LOSS: 1.265257
+INFO:root:--- VALIDATION LOSS: 1.265257
+INFO:root:--- --- best model found so far: 1.265257
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [2/100]
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- TRAINING LOSS: 0.649547
+INFO:root:--- VALIDATION LOSS: 0.649547
+INFO:root:--- --- best model found so far: 0.649547
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [3/100]
+INFO:root:--- Parsing track easy-race_00.csv
+DEBUG:parso.python.diff:diff parser start
+DEBUG:parso.python.diff:diff parser calculated
+DEBUG:parso.python.diff:diff: line_lengths old: 25, new: 20
+DEBUG:parso.python.diff:diff replace old[1:5] new[1:3]
+DEBUG:parso.python.diff:parse_part from 1 to 20 (to 19 in part parser)
+DEBUG:parso.python.diff:diff equal old[6:7] new[4:5]
+DEBUG:parso.python.diff:diff replace old[8:8] new[6:6]
+DEBUG:parso.python.diff:diff equal old[9:12] new[7:10]
+DEBUG:parso.python.diff:diff replace old[13:13] new[11:11]
+DEBUG:parso.python.diff:diff equal old[14:19] new[12:17]
+DEBUG:parso.python.diff:diff replace old[20:23] new[18:18]
+DEBUG:parso.python.diff:diff equal old[24:25] new[19:20]
+DEBUG:parso.python.diff:diff parser end
+INFO:root:Epoch [1/100]
+INFO:root:Epoch [1/100]
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:Epoch [1/100]
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:Epoch [1/100]
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- TRAINING LOSS: 0.996645
+INFO:root:--- VALIDATION LOSS: 0.996645
+INFO:root:--- --- best model found so far: 0.996645
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [2/100]
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:Epoch [1/100]
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- TRAINING LOSS: 0.837835
+INFO:root:--- Parsing track validation-race_33.csv
+INFO:root:--- Parsing track validation-race_32.csv
+INFO:root:--- Parsing track validation-race_30.csv
+INFO:root:--- Parsing track validation-race_31.csv
+INFO:root:--- VALIDATION LOSS: 0.837835
+INFO:root:--- --- best model found so far: 0.837835
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [2/100]
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:Epoch [1/100]
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:Epoch [1/100]
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- TRAINING LOSS: 0.303936
+INFO:root:--- Parsing track validation-race_33.csv
+INFO:root:--- VALIDATION LOSS: 0.303936
+INFO:root:--- --- best model found so far: 0.303936
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [2/100]
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:Epoch [1/100]
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:Epoch [1/100]
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- TRAINING LOSS: 0.792498
+INFO:root:--- Parsing track validation-race_33.csv
+INFO:root:--- Parsing track validation-race_32.csv
+INFO:root:--- Parsing track validation-race_30.csv
+INFO:root:--- Parsing track validation-race_31.csv
+INFO:root:--- VALIDATION LOSS: 0.421355
+INFO:root:--- --- best model found so far: 0.421355
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [2/100]
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track easy-race_01.csv
