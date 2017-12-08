@@ -2,7 +2,6 @@
 
 from pytocl.main import main
 from drivers.my_driver import MyDriver
-from drivers.esn_driver import ESNDriver
 
 if __name__ == '__main__':
     main(MyDriver(logdata=False))
