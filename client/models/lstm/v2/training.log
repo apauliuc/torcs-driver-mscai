@@ -380,3 +380,5 @@ INFO:root:-------------------------------------------------------
 INFO:root:Epoch [2/100]
 INFO:root:--- Parsing track easy-race_00.csv
 INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:Epoch [1/100]
+INFO:root:--- Parsing track easy-race_00.csv
