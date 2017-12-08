@@ -1,8 +1,0 @@
-pandas
-scikit-learn
-numpy
-beautifulsoup4
-elo
-lxml
-psutil
-pyyaml
