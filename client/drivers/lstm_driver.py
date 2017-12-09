@@ -28,17 +28,16 @@ class Driver_LSTM(Driver):
             HYPERPARAMS.BATCH_SIZE
         )
 
-        checkpoint = torch.load('models/lstm/v2/checkpoints/best_checkpoint.pth.tar')
+        checkpoint = torch.load('models/lstm/v2/checkpoints/best_checkpoint.pth.tar',
+                                map_location=lambda storage, loc: storage)
         self.neural_net.load_state_dict(checkpoint['state_dict'])
         self.neural_net.init_hidden()
 
     def drive(self, carstate: State) -> Command:
-        X = [
-            carstate.speed_x,
-            carstate.distance_from_center,
-            carstate.angle,
-            *carstate.distances_from_edge
-        ]
+        X = [carstate.speed_x,
+             carstate.distance_from_center,
+             carstate.angle,
+             *carstate.distances_from_edge]
 
         X = torch.FloatTensor(X)
         params = Variable(X.view(1, -1))
