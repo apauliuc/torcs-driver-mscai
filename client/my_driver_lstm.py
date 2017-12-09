@@ -10,6 +10,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.autograd import Variable
 
+dtype = torch.FloatTensor
+
 
 def load_obj(name):
     with open('parameters/' + name + '.pkl', 'rb') as f:
@@ -17,7 +19,7 @@ def load_obj(name):
 
 
 class LSTMDriver(nn.Module):
-    def __init__(self, input_size, hidden_size, num_layers, output_size, batch_size=0):
+    def __init__(self, input_size, hidden_size, num_layers, output_size, batch_size=1):
         super(LSTMDriver, self).__init__()
         self.input_size = input_size
         self.hidden_size = hidden_size
@@ -32,8 +34,10 @@ class LSTMDriver(nn.Module):
         self.linear = nn.Linear(self.hidden_size, self.output_size)
 
     def init_hidden(self):
-        return (Variable(torch.zeros(self.num_layers, 1, self.hidden_size)),
-                Variable(torch.zeros(self.num_layers, 1, self.hidden_size)))
+        return (Variable(torch.zeros(self.num_layers, self.batch_size, self.hidden_size),
+                         requires_grad=False).type(dtype),
+                Variable(torch.zeros(self.num_layers, self.batch_size, self.hidden_size),
+                         requires_grad=False).type(dtype))
 
     def forward(self, x):
         lstm_out, self.hidden = self.lstm(x, self.hidden)
@@ -51,8 +55,8 @@ class MyDriver(Driver):
 
         params = {
             'input': 22,
-            'hidden': 22,
-            'layers': 1,
+            'hidden': 77,
+            'layers': 2,
             'output': 3
         }
 
@@ -62,12 +66,13 @@ class MyDriver(Driver):
             params['layers'],
             params['output']
         )
-        self.neural_net.load_state_dict(torch.load('parameters/weight_parameters.pt'))
+        self.neural_net.load_state_dict(torch.load('parameters/evolved'))
         self.neural_net.init_hidden()
 
-        # self.params_dict = load_obj('norm_parameters')
+        # self.means = load_obj('means')
+        # self.stdevs = load_obj('stdevs')
 
-    def normalize(self, x, mmin, mmax):
+    def normalize_to_0_1(self, x, mmin, mmax):
         return np.clip((x - mmin) / (mmax - mmin), 0, 1)
 
     def invert_normalize(self, x, mmin, mmax):
@@ -75,7 +80,7 @@ class MyDriver(Driver):
         return x * (mmax - mmin) + mmin
 
     def scale_array(self, x, mmin=0.0, mmax=1.0, new_min=-1.0, new_max=1.0):
-        x = self.normalize(x, mmin, mmax)
+        x = self.normalize_to_0_1(x, mmin, mmax)
         return np.clip(x * (new_max - new_min) + new_min, new_min, new_max)
 
     def drive(self, carstate: State) -> Command:
@@ -113,7 +118,8 @@ class MyDriver(Driver):
         params = Variable(X.view(1, -1))
         output = self.neural_net(params)
 
-        accelerator, brake, steer = output.resize(3).data.numpy()
+        # print(output.data)
+        accelerator, brake, steer = output.data.numpy()[0][0]
 
         command = Command()
 
@@ -141,7 +147,7 @@ class MyDriver(Driver):
                 command.gear = carstate.gear - 1
 
         if not command.gear:
-            command.gear = carstate.gear
+            command.gear = carstate.gear or 1
 
         # print('{} - {}'.format(steer, self.scale_array(steer, 0, 1)))
         command.steering = steer
