@@ -52,5 +52,5 @@ class HYPERPARAMS(object):
     HIDDEN_SIZE = 75
     NUM_LAYERS = 2
     BATCH_SIZE = 1
-    NUM_EPOCHS = 100
+    NUM_EPOCHS = 150
     LEARNING_RATE = 1e-3
