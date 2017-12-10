@@ -3,7 +3,7 @@
 from pytocl.main import main
 # from drivers.my_driver import MyDriver
 # from drivers.esn_driver import ESNDriver
-from drivers.lstm_driver import Driver_LSTM
+from drivers.lstm_driver import LSTMDriver
 
 if __name__ == '__main__':
-    main(Driver_LSTM(logdata=False))
+    main(LSTMDriver(logdata=False))
