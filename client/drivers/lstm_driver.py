@@ -3,17 +3,16 @@ from pytocl.car import State, Command
 import models.lstm.v3.steering as steering
 import models.lstm.v3.speeding as speeding
 import pickle
-import json
 
 import torch
 from torch.autograd import Variable
+
 
 def load_obj(name):
     with open('parameters/' + name + '.pkl', 'rb') as f:
         return pickle.load(f)
 
 
-# noinspection PyPep8Naming,PyMethodMayBeStatic
 class LSTMDriver(Driver):
 
     def __init__(self, logdata=True):
@@ -53,12 +52,12 @@ class LSTMDriver(Driver):
         self.speeding_model.init_hidden()
 
     def drive(self, carstate: State) -> Command:
-        X = [carstate.speed_x,
+        x = [carstate.speed_x,
              carstate.distance_from_center,
              carstate.angle,
              *carstate.distances_from_edge]
 
-        X = torch.FloatTensor(X)
+        X = torch.FloatTensor(x)
         inputs = Variable(X.view(1, 1, -1))
         steering_output = self.steering_model(inputs)
         speeding_output = self.speeding_model(inputs)
@@ -83,13 +82,16 @@ class LSTMDriver(Driver):
         #     command.accelerator = 0
 
         # gear shifting
-        if accelerator > 0:
+        if accelerator - brake >= 0:
+            command.brake = 0
+            command.accelerator = accelerator
             if carstate.rpm > 8000:
                 command.gear = carstate.gear + 1
             if carstate.rpm < 1000:
                 command.gear = carstate.gear - 1
-
         else:
+            command.brake = brake
+            command.accelerator = 0
             if carstate.rpm < 2500:
                 command.gear = carstate.gear - 1
 
