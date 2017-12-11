@@ -37,7 +37,7 @@ class Steering(nn.Module):
         
         self.hidden = nn.Linear(self.lstm_hidden_size, self.hidden_layer_size)
         
-        self.sigmoid = nn.Sigmoid()
+        self.tanh = nn.Tanh()
         
         self.dropout = nn.Dropout(p=dropout_prob)
         
@@ -50,7 +50,7 @@ class Steering(nn.Module):
     def forward(self, x):
         lstm_out, self.hidden_state = self.lstm(x.view(len(x), 1, -1), self.hidden_state)
         
-        hidden_out = self.sigmoid(self.hidden(lstm_out))
+        hidden_out = self.tanh(self.hidden(lstm_out))
 
         drop_out = self.dropout(hidden_out)
         
