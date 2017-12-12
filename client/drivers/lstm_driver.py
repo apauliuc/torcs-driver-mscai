@@ -92,12 +92,12 @@ class LSTMDriver(Driver):
             speeding.HYPERPARAMS.BATCH_SIZE
         )
 
-        steering_checkpoint = torch.load('models/lstm/v3/split_checkpoints/steering/best_checkpoint.tar',
-                                         map_location=lambda storage, loc: storage)
-        speeding_checkpoint = torch.load('models/lstm/v3/split_checkpoints/speeding/best_checkpoint.tar',
-                                         map_location=lambda storage, loc: storage)
-        self.steering_model.load_state_dict(steering_checkpoint['state_dict'])
-        self.speeding_model.load_state_dict(speeding_checkpoint['state_dict'])
+        steering_params = torch.load('models/lstm/v3/model_parameters/steering/best_checkpoint.tar',
+                                     map_location=lambda storage, loc: storage)
+        speeding_params = torch.load('models/lstm/v3/model_parameters/speeding/best_checkpoint.tar',
+                                     map_location=lambda storage, loc: storage)
+        self.steering_model.load_state_dict(steering_params)
+        self.speeding_model.load_state_dict(speeding_params)
 
         self.steering_model.train(mode=False)
         self.speeding_model.train(mode=False)
