@@ -721,8 +721,8 @@ def initialize_car(c):
 if __name__ == "__main__":
 
     # allow for simulations
-    if os.getcwd() != '/home/andrei/Code/torcs-driver-mscai/snakeoil_2015':
-        os.chdir('/home/andrei/Code/torcs-driver-mscai/snakeoil_2015')
+    # if os.getcwd() != '/home/andrei/Code/torcs-driver-mscai/snakeoil_2015':
+    #     os.chdir('/home/andrei/Code/torcs-driver-mscai/snakeoil_2015')
 
     T = Track()
     C = snakeoil.Client()
@@ -737,9 +737,9 @@ if __name__ == "__main__":
     C.S.d['stucktimer'] = 0
     C.S.d['targetSpeed'] = 0
 
-    if C.stage > 0:
-        f = codecs.open('data/{}/race_{}.csv'.format(C.trial, C.trackname), 'a', encoding='UTF-8')
-        writer = csv.writer(f, delimiter=',')
+    # if C.stage > 0:
+    #     f = codecs.open('data/{}/race_{}.csv'.format(C.trial, C.trackname), 'a', encoding='UTF-8')
+    #     writer = csv.writer(f, delimiter=',')
 
     for step in xrange(C.maxSteps, 0, -1):
         C.get_servers_input()
@@ -758,22 +758,23 @@ if __name__ == "__main__":
                 break
             row = list()
 
+            print(C.R.d['brake'])
             # response
-            row.append(C.R.d['accel'])
-            row.append(C.R.d['brake'])
-            row.append(C.R.d['steer'])
+            # row.append(C.R.d['accel'])
+            # row.append(C.R.d['brake'])
+            # row.append(C.R.d['steer'])
 
-            # state
-            row.append(C.S.d['speedX'])
-            row.append(C.S.d['trackPos'])
-            row.append(C.S.d['angle'])
-            row.extend(C.S.d['track'])
+            # # state
+            # row.append(C.S.d['speedX'])
+            # row.append(C.S.d['trackPos'])
+            # row.append(C.S.d['angle'])
+            # row.extend(C.S.d['track'])
 
             # write to file
             # noinspection PyUnboundLocalVariable
-            writer.writerow(row)
+            # writer.writerow(row)
             # noinspection PyUnboundLocalVariable
-            f.flush()
+            # f.flush()
 
     if not C.stage:
         T.write_track(C.trackname)

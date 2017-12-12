@@ -47,11 +47,10 @@ class LSTMDriver(Driver):
         self.speeding_model.load_state_dict(speeding_checkpoint['state_dict'])
 
         self.steering_model.train(mode=False)
-        self.steering_model.train(mode=False)
+        self.speeding_model.train(mode=False)
 
         self.steering_model.init_hidden()
         self.speeding_model.init_hidden()
-        self.printed = False
 
     def drive(self, carstate: State) -> Command:
         x = [carstate.speed_x,
@@ -64,8 +63,6 @@ class LSTMDriver(Driver):
         steering_output = self.steering_model(inputs)
         speeding_output = self.speeding_model(inputs)
 
-        # print(output.data)
-
         steer = steering_output.data[0][0][0]
         accelerator = speeding_output.data[0][0][0]
         brake = speeding_output.data[0][0][1]
@@ -77,7 +74,7 @@ class LSTMDriver(Driver):
         command.steering = steer
 
         # gear shifting
-        gear_params = json.load(open('automatic_gear_params.json'))
+        # gear_params = json.load(open('automatic_gear_params.json'))
         if accelerator - brake >= 0:
             command.accelerator = accelerator
             if carstate.rpm > 8000:
@@ -87,13 +84,11 @@ class LSTMDriver(Driver):
         else:
             command.brake = brake
             command.accelerator = 0
-            if carstate.rpm < 2500:
+            if carstate.rpm < 3000:
                 command.gear = carstate.gear - 1
 
         if not command.gear:
             command.gear = carstate.gear or 1
-
-
         # command.gear = automatic_transmission(gear_params, carstate.rpm, carstate.gear, carstate.speed_x)
 
         return command
