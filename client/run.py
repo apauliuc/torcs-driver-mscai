@@ -7,4 +7,4 @@ from pytocl.driver import Driver
 from drivers.lstm_driver import LSTMDriver
 
 if __name__ == '__main__':
-    main(LSTMDriver(logdata=False))
+    main(LSTMDriver(logdata=False), 3001)

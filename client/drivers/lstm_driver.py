@@ -4,9 +4,31 @@ import models.lstm.v3.steering as steering
 import models.lstm.v3.speeding as speeding
 import pickle
 import json
+import os
 
 import torch
 from torch.autograd import Variable
+
+FIFO = 'mypipe_random'
+
+two2one = 'two2one_random'
+one2two = 'one2two_random'
+
+process = 0
+
+file = open('%s' % one2two, 'w')
+file.write("")
+file.close()
+file = open('%s' % two2one, 'w')
+file.write("")
+file.close()
+
+try:
+    os.mkfifo(FIFO)
+    process = 1  # i am in process 1
+except OSError as oe:
+    process = 2  # i am in process 2
+    os.remove(FIFO)
 
 
 def load_obj(name):
@@ -14,10 +36,41 @@ def load_obj(name):
         return pickle.load(f)
 
 
-class LSTMDriver(Driver):
+def outside_of_track(car_state: State) -> bool:
+    return abs(car_state.distance_from_center) >= 1
 
+
+def signal(car_state: State):
+    if process == 1:
+        file_write = open('%s' % one2two, 'w', os.O_NONBLOCK)
+    else:
+        file_write = open('%s' % two2one, 'w', os.O_NONBLOCK)
+
+    file_write.write(str(car_state.distance_from_start) + "\n")
+    file_write.flush()
+    file_write.close()
+
+
+def in_danger(car_state: State):
+    if process == 2:
+        file_read = open(one2two, 'r')
+    else:
+        file_read = open(two2one, 'r')
+
+    for other_car_distance_from_start in file_read:
+        if other_car_distance_from_start != "":
+            if float(other_car_distance_from_start) - float(car_state.distance_from_start) < 100.0 and \
+                                    float(other_car_distance_from_start) - float(car_state.distance_from_start) > 0:
+                return True
+    file_read.close()
+    return False
+
+
+class LSTMDriver(Driver):
     def __init__(self, logdata=True):
         super().__init__(logdata)
+
+        self.already_signaled = False
 
         self.steering_model = steering.Steering(
             steering.HYPERPARAMS.INPUT_SIZE,
@@ -90,6 +143,19 @@ class LSTMDriver(Driver):
         if not command.gear:
             command.gear = carstate.gear or 1
         # command.gear = automatic_transmission(gear_params, carstate.rpm, carstate.gear, carstate.speed_x)
+
+        try:
+            if not self.already_signaled and outside_of_track(carstate):
+                signal(carstate)
+                print(process, " Outside of track.")
+                self.already_signaled = True
+            else:
+                if in_danger(carstate):
+                    print(process, "In danger!")
+                    command.accelerator *= 0.8
+                    command.brake *= 1.1
+        except Exception as e:
+            print(e)
 
         return command
 
