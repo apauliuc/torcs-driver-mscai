@@ -1,0 +1,3036 @@
+INFO:root:Training speeding...
+INFO:root:Epoch [201/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 1.026719
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [202/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.798484
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [203/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.732640
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [204/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.695536
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [205/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.665504
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [206/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.659442
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [207/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.630422
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [208/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.634392
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [209/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.636690
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [210/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.612863
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [211/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.593544
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [212/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.620375
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [213/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.624771
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [214/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.633402
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [215/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.651370
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [216/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.616652
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [217/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.609976
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [218/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.619910
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [219/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.645516
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [220/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.668528
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [221/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.678820
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [222/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.654922
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [223/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.638117
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [224/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.602266
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [225/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.584609
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [226/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.569234
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [227/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.568546
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [228/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.554255
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [229/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.554025
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [230/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.539694
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [231/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.536703
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [232/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.527368
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [233/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.526632
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [234/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.522383
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [235/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.520895
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [236/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.517005
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [237/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.516234
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [238/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.512764
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [239/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.510408
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [240/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.507703
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [241/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.503592
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [242/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.502678
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [243/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.498736
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [244/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.497712
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [245/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.492587
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [246/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.492633
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [247/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.487162
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [248/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.485471
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [249/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.479346
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [250/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.479408
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [251/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.479743
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [252/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.475447
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [253/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.475418
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [254/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.471112
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [255/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.469498
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [256/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.474308
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [257/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.476750
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [258/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.493469
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [259/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.493557
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [260/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.474595
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [261/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.469178
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [262/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.459610
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [263/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.457298
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [264/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.452884
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [265/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.451930
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [266/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.451232
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [267/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.449272
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [268/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.448310
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [269/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.449016
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [270/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.450782
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [271/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.455929
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [272/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.454087
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [273/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.449806
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [274/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.445217
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [275/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.447841
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [276/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.444778
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [277/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.447738
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [278/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.442682
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [279/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.444327
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [280/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.440159
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [281/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.442393
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [282/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.435399
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [283/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.433625
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [284/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.431274
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [285/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.431055
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [286/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.428526
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [287/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.428563
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [288/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.428262
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [289/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.429088
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [290/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.435048
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [291/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.435208
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [292/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.436617
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [293/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.437400
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [294/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.453109
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [295/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.443201
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [296/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.435171
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [297/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.431845
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [298/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.428026
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [299/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.424101
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [300/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.423476
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [301/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.419890
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [302/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.420833
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [303/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.425337
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [304/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.423602
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [305/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.420213
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [306/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.419881
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [307/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.422647
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [308/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.419882
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [309/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.413959
+INFO:root:--- --- best model found so far: 0.413959
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [310/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.415177
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [311/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.416382
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [312/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.422497
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [313/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.421841
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [314/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.428083
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [315/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.419742
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [316/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.419819
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [317/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.426556
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [318/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.420219
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [319/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.412018
+INFO:root:--- --- best model found so far: 0.412018
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [320/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.406808
+INFO:root:--- --- best model found so far: 0.406808
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [321/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.406919
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [322/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.409525
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [323/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.406584
+INFO:root:--- --- best model found so far: 0.406584
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [324/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.402956
+INFO:root:--- --- best model found so far: 0.402956
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [325/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.401441
+INFO:root:--- --- best model found so far: 0.401441
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [326/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.402261
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [327/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.404288
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [328/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.402350
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [329/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.398635
+INFO:root:--- --- best model found so far: 0.398635
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [330/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.396559
+INFO:root:--- --- best model found so far: 0.396559
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [331/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.400191
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [332/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.401447
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [333/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.396533
+INFO:root:--- --- best model found so far: 0.396533
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [334/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.397271
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [335/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.397755
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [336/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.397416
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [337/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.393288
+INFO:root:--- --- best model found so far: 0.393288
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [338/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.399381
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [339/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.409066
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [340/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.407616
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [341/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.405276
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [342/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.393964
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [343/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.393975
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [344/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.398196
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [345/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.402335
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [346/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.398754
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [347/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.393361
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [348/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.392903
+INFO:root:--- --- best model found so far: 0.392903
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [349/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.390539
+INFO:root:--- --- best model found so far: 0.390539
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [350/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.385114
+INFO:root:--- --- best model found so far: 0.385114
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [351/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.385809
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [352/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.385562
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [353/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.385820
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [354/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.388021
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [355/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.385848
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [356/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.387596
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [357/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.386128
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [358/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.394335
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [359/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.395200
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [360/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.392166
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [361/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.395759
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [362/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.386242
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [363/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.376464
+INFO:root:--- --- best model found so far: 0.376464
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [364/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.371185
+INFO:root:--- --- best model found so far: 0.371185
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [365/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.368703
+INFO:root:--- --- best model found so far: 0.368703
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [366/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.367210
+INFO:root:--- --- best model found so far: 0.367210
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [367/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.366488
+INFO:root:--- --- best model found so far: 0.366488
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [368/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.365952
+INFO:root:--- --- best model found so far: 0.365952
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [369/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.365702
+INFO:root:--- --- best model found so far: 0.365702
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [370/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.365827
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [371/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.365480
+INFO:root:--- --- best model found so far: 0.365480
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [372/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.365054
+INFO:root:--- --- best model found so far: 0.365054
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [373/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.364933
+INFO:root:--- --- best model found so far: 0.364933
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [374/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.364152
+INFO:root:--- --- best model found so far: 0.364152
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [375/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.364353
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [376/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.363983
+INFO:root:--- --- best model found so far: 0.363983
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [377/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.364306
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [378/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.363518
+INFO:root:--- --- best model found so far: 0.363518
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [379/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.363947
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [380/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.363282
+INFO:root:--- --- best model found so far: 0.363282
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [381/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.363099
+INFO:root:--- --- best model found so far: 0.363099
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [382/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.362440
+INFO:root:--- --- best model found so far: 0.362440
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [383/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.362961
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [384/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.363438
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [385/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.362597
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [386/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.362997
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [387/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.362476
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [388/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.363057
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [389/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.362589
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [390/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.362133
+INFO:root:--- --- best model found so far: 0.362133
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [391/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.361866
+INFO:root:--- --- best model found so far: 0.361866
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [392/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.362123
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [393/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.361968
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [394/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.361528
+INFO:root:--- --- best model found so far: 0.361528
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [395/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.361855
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [396/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.361013
+INFO:root:--- --- best model found so far: 0.361013
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [397/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.360683
+INFO:root:--- --- best model found so far: 0.360683
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [398/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.361286
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [399/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.360158
+INFO:root:--- --- best model found so far: 0.360158
+INFO:root:-------------------------------------------------------
+INFO:root:Epoch [400/400]
+INFO:root:--- Parsing track medium-race_13.csv
+INFO:root:--- Parsing track hard-race_21.csv
+INFO:root:--- Parsing track hard-race_23.csv
+INFO:root:--- Parsing track medium-race_12.csv
+INFO:root:--- Parsing track easy-race_03.csv
+INFO:root:--- Parsing track medium-race_11.csv
+INFO:root:--- Parsing track easy-race_02.csv
+INFO:root:--- Parsing track medium-race_10.csv
+INFO:root:--- Parsing track easy-race_00.csv
+INFO:root:--- Parsing track hard-race_20.csv
+INFO:root:--- Parsing track easy-race_01.csv
+INFO:root:--- Parsing track hard-race_22.csv
+INFO:root:--- TRAINING LOSS: 0.360220
+INFO:root:-------------------------------------------------------
