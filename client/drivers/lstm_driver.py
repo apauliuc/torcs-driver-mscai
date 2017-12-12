@@ -142,7 +142,7 @@ class LSTMDriver(Driver):
 
         if not command.gear:
             command.gear = carstate.gear or 1
-        # command.gear = automatic_transmission(gear_params, carstate.rpm, carstate.gear, carstate.speed_x)
+        # command.gear = automatic_transmission(gear_params, carstate.rpm, carstate.gear)
 
         try:
             if not self.already_signaled and outside_of_track(carstate):
@@ -160,7 +160,7 @@ class LSTMDriver(Driver):
         return command
 
 
-def automatic_transmission(P, rpm, g, sx):
+def automatic_transmission(P, rpm, g):
     ng = 1
     if g == 6 and rpm < P['dnsh5rpm']:
         ng = g - 1
