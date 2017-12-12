@@ -3,6 +3,7 @@ from pytocl.car import State, Command
 import models.lstm.v3.steering as steering
 import models.lstm.v3.speeding as speeding
 import pickle
+import json
 
 import torch
 from torch.autograd import Variable
@@ -46,10 +47,11 @@ class LSTMDriver(Driver):
         self.speeding_model.load_state_dict(speeding_checkpoint['state_dict'])
 
         self.steering_model.train(mode=False)
-        self.steering_model.train(mode=True)
+        self.steering_model.train(mode=False)
 
         self.steering_model.init_hidden()
         self.speeding_model.init_hidden()
+        self.printed = False
 
     def drive(self, carstate: State) -> Command:
         x = [carstate.speed_x,
@@ -74,16 +76,9 @@ class LSTMDriver(Driver):
         command.brake = brake
         command.steering = steer
 
-        # if accelerator - brake >= 0:
-        #     command.brake = 0
-        #     command.accelerator = 1.5 * (accelerator - brake)
-        # else:
-        #     command.brake = brake
-        #     command.accelerator = 0
-
         # gear shifting
+        gear_params = json.load(open('automatic_gear_params.json'))
         if accelerator - brake >= 0:
-            command.brake = 0
             command.accelerator = accelerator
             if carstate.rpm > 8000:
                 command.gear = carstate.gear + 1
@@ -98,5 +93,36 @@ class LSTMDriver(Driver):
         if not command.gear:
             command.gear = carstate.gear or 1
 
+
+        # command.gear = automatic_transmission(gear_params, carstate.rpm, carstate.gear, carstate.speed_x)
+
         return command
 
+
+def automatic_transmission(P, rpm, g, sx):
+    ng = 1
+    if g == 6 and rpm < P['dnsh5rpm']:
+        ng = g - 1
+    elif g == 5 and rpm < P['dnsh4rpm']:
+        ng = g - 1
+    elif g == 4 and rpm < P['dnsh3rpm']:
+        ng = g - 1
+    elif g == 3 and rpm < P['dnsh2rpm']:
+        ng = g - 1
+    elif g == 2 and rpm < P['dnsh1rpm']:
+        ng = g - 1
+    elif g == 5 and rpm > P['upsh6rpm']:
+        ng = g + 1
+    elif g == 4 and rpm > P['upsh5rpm']:
+        ng = g + 1
+    elif g == 3 and rpm > P['upsh4rpm']:
+        ng = g + 1
+    elif g == 2 and rpm > P['upsh3rpm']:
+        ng = g + 1
+    elif g == 1 and rpm > P['upsh2rpm']:
+        ng = g + 1
+    elif not g:
+        ng = 1
+    else:
+        pass
+    return ng
