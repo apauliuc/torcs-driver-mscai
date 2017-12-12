@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
 from pytocl.main import main
-from drivers.my_driver import MyDriver
+from drivers.lstm_driver import LSTMDriver
 
 if __name__ == '__main__':
-    main(MyDriver(logdata=False))
+    main(LSTMDriver(logdata=False))

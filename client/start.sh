@@ -1,7 +1,3 @@
-#! /usr/bin/env python3
+#!/usr/bin/env bash
 
-from pytocl.main import main
-from my_driver import MyDriver
-
-if __name__ == '__main__':
-    main(MyDriver(logdata=False))
+python run.py

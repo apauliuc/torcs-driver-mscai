@@ -5,7 +5,7 @@ import logging
 from pytocl.protocol import Client
 
 
-def main(driver):
+def main(driver, port_value=3001):
     """Main entry point of application."""
     parser = argparse.ArgumentParser(
         description='Client for TORCS racing car simulation with SCRC network'
@@ -21,7 +21,7 @@ def main(driver):
         '--port',
         help='Port to connect, 3001 - 3010 for clients 1 - 10.',
         type=int,
-        default=3001
+        default=port_value
     )
     parser.add_argument('-v', help='Debug log level.', action='store_true')
     args = parser.parse_args()

@@ -44,7 +44,7 @@ class Driver:
         of range finders. During regular execution, a 19-valued vector of track
         distances in these directions is returned in ``state.State.tracks``.
         """
-        return -45, -19, -12, -7, -4, -2.5, -1.7, -1, -.5, 0, .5, 1, 1.7, 2.5, \
+        return -45, -19, -12, -7, -4, -2.5, -1.7, -1, -0.5, 0, 0.5, 1, 1.7, 2.5, \
                4, 7, 12, 19, 45
 
     def on_shutdown(self):
